@@ -1,0 +1,38 @@
+﻿<Window x:Class="InventiSys.GUI.UsuarioView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:local="clr-namespace:InventiSys.GUI"
+       xmlns:acesso="clr-namespace:Accesos.GUI;assembly=Accesos"
+  
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1080"
+      Title="InventiSys" Height="720" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+
+    <Grid>
+       <Border Background="#eff2f7" CornerRadius="30">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Margin="20 28 0 35" Style="{StaticResource topButton}">
+                        <Icon:PackIconMaterial Kind="Menu"  Width="15" Height="15"></Icon:PackIconMaterial>
+                    </Button>
+                    <local:SideBarMenu Grid.Row="1"/>
+                </Grid>
+                <!-- Contenido principal -->
+                <acesso:UsuarioContent Grid.Column="1" Margin="30 20 20 20"/>
+    </Grid>
+</Border>
+ 
+    </Grid>
+</Window>

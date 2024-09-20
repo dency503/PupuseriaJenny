@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="InventiSys.GUI.SideBarMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" >
+    <!-- Sidebar Container -->
+    <Border Grid.Row="1" Background="#623ed0" CornerRadius="0 50 0 30">
+        <DockPanel>
+            <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100" DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
+                <Ellipse>
+                    <Ellipse.Fill>
+                        <ImageBrush></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Border>
+            <TextBlock Text="Pupuseria Jenny" Foreground="White"  FontSize="22" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
+            <TextBlock Text="Administrador" Foreground="#d0bfff" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
+            <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="#7e5fdc"/>
+            <StackPanel DockPanel.Dock="Top">
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="ViewDashboard" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="DashBoard1"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="AccountGroup" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Acessos"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}" >
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="Shield" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Permisos"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="Package" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Productos"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="Tag" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Categorias"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="Warehouse" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Inventario"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="Cart" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Ventas"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="Shopping" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Compras"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="FileChart" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Reporte"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
+                    <TextBlock Text="Cerrar Sesion"/>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+    </Border>
+</UserControl>

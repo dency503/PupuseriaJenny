@@ -1,0 +1,69 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Accesos.GUI"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="av"
+    x:Class="Accesos.GUI.GestionUsuarioView"
+    Width="Auto"
+    Height="Auto"
+    av:DesignHeight="272.88"
+    av:DesignWidth="501.5">
+    <Grid>
+        <!-- Definir filas y columnas para el diseño -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Filtro -->
+            <RowDefinition Height="Auto"/>
+            <!-- Tabla de usuarios -->
+            <RowDefinition Height="*"/>
+            <!-- Accesos rápidos -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <!-- Controles de acción -->
+            <ColumnDefinition Width="*"/>
+            <!-- Tabla de usuarios -->
+            <ColumnDefinition Width="Auto"/>
+            <!-- Accesos rápidos -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Filtro -->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="10">
+            <TextBox x:Name="tbFiltro" Width="300" TextChanged="TxtFiltro_TextChanged" />
+            <TextBlock Text="Filtro" Foreground="Gray" VerticalAlignment="Top" Margin="5,2,0,0" IsHitTestVisible="False"  />
+        </Grid>
+
+        <!-- Barra de herramientas -->
+        <Border Background="#f8f9fa" Grid.Row="1" Grid.ColumnSpan="3" Padding="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button Content="Agregar" Width="100" Margin="0,0,10,0" Click="BtnAgregar_Click" />
+                <Button Content="Editar" Width="100" Margin="0,0,10,0"  Click="BtnEditar_Click" />
+                <Button Content="Eliminar" Width="100" Margin="0,0,10,0" Click="BtnEliminar_Click"/>
+            </StackPanel>
+        </Border>
+        
+
+        <!-- Tabla de usuarios -->
+        <DataGrid x:Name="dgUsuarios" Grid.Row="2" Grid.Column="1" AutoGenerateColumns="False" Margin="10" 
+                  IsReadOnly="True"  CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IDUsuario}" Width="Auto" x:Name="IDUsuario"/>
+                <DataGridTextColumn Header="Usuario" Binding="{Binding Usuario}" Width="*" />
+                <DataGridTextColumn Header="Rol" Binding="{Binding IDRol}" Width="Auto" />
+                <DataGridTextColumn Header="Contraseña" Binding="{Binding Contraseña}" Width="Auto" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <!-- Accesos rápidos -->
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" Margin="10">
+            <Button Content="Administrar Roles" Width="150" Margin="0,0,0,10" />
+            <Button Content="Administrar Empleados" Width="150" />
+        </StackPanel>
+
+       
+    </Grid>
+</UserControl>

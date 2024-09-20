@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="InventiSys.GUI.InicioView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:InventiSys.GUI"
+             Width="Auto" Height="Auto">
+    <Grid>
+        <!-- Definir filas para el diseño responsivo -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Barra de encabezado -->
+        <Border Background="#f8f9fa" Grid.Row="0" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Inicio" FontSize="24" FontWeight="Bold" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Contadores y producto más vendido -->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Contadores -->
+            <Border Grid.Column="0" Padding="10">
+                <StackPanel>
+                    <Image Source="Images/productos.png" Height="50" Width="50" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Productos" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="txtProductoCount" FontSize="24" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" Padding="10">
+                <StackPanel>
+                    <Image Source="Images/usuarios.png" Height="50" Width="50" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Usuarios" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="txtUsuarioCount" FontSize="24" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="2" Padding="10">
+                <StackPanel>
+                    <Image Source="Images/ventas.png" Height="50" Width="50" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Ventas" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="txtVentaCount" FontSize="24" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="3" Padding="10">
+                <StackPanel>
+                    <Image Source="Images/categorias.png" Height="50" Width="50" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Categorías" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="txtCategoriaCount" FontSize="24" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Producto más vendido -->
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock Text="Producto Más Vendido:" FontWeight="Bold" FontSize="16"/>
+                <Border Margin="10">
+                    <StackPanel>
+                        <TextBlock x:Name="txtProductoMasVendido" FontSize="18"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

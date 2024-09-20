@@ -1,0 +1,250 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Home\\source\\repos\\InventiSys\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|c:\\users\\home\\source\\repos\\inventisys\\accesos\\gui\\editarusuariowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\editarusuariowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|c:\\users\\home\\source\\repos\\inventisys\\accesos\\gui\\usuariocontent.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usuariocontent.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|c:\\users\\home\\source\\repos\\inventisys\\accesos\\gui\\gestionusuarioview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\gestionusuarioview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|c:\\users\\home\\source\\repos\\inventisys\\accesos\\gui\\usuarioedicionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usuarioedicionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|c:\\users\\home\\source\\repos\\inventisys\\inventisys\\gui\\principal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|solutionrelative:inventisys\\gui\\principal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|c:\\users\\home\\source\\repos\\inventisys\\accesos\\gui\\editarusuariowindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\editarusuariowindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|c:\\users\\home\\source\\repos\\inventisys\\accesos\\cls\\usernamevalidationrule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\cls\\usernamevalidationrule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|c:\\users\\home\\source\\repos\\inventisys\\accesos\\gui\\usuariocontent.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usuariocontent.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|c:\\users\\home\\source\\repos\\inventisys\\inventisys\\gui\\usuarioedicionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|solutionrelative:inventisys\\gui\\usuarioedicionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|c:\\users\\home\\source\\repos\\inventisys\\accesos\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|c:\\users\\home\\source\\repos\\inventisys\\inventisys\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|solutionrelative:inventisys\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BED8848-8BAA-484B-9E16-B49E5AB318AC}|DataLayer\\DataLayer.csproj|c:\\users\\home\\source\\repos\\inventisys\\datalayer\\consultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BED8848-8BAA-484B-9E16-B49E5AB318AC}|DataLayer\\DataLayer.csproj|solutionrelative:datalayer\\consultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|c:\\users\\home\\source\\repos\\inventisys\\inventisys\\gui\\usuarioview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|solutionrelative:inventisys\\gui\\usuarioview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|c:\\users\\home\\source\\repos\\inventisys\\inventisys\\gui\\usuarioview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{AF22E924-5ED4-4B92-93CE-1F60FA654D39}|InventiSys\\InventiSys.csproj|solutionrelative:inventisys\\gui\\usuarioview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GestionUsuarioView.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\GestionUsuarioView.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\GestionUsuarioView.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\GestionUsuarioView.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\GestionUsuarioView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-20T22:05:15.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioEdicionView.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\UsuarioEdicionView.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UsuarioEdicionView.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\UsuarioEdicionView.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\UsuarioEdicionView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-20T22:05:11.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Principal.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\GUI\\Principal.xaml",
+              "RelativeDocumentMoniker": "InventiSys\\GUI\\Principal.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\GUI\\Principal.xaml",
+              "RelativeToolTip": "InventiSys\\GUI\\Principal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-20T22:04:51.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsernameValidationRule.cs",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\CLS\\UsernameValidationRule.cs",
+              "RelativeDocumentMoniker": "Accesos\\CLS\\UsernameValidationRule.cs",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\CLS\\UsernameValidationRule.cs",
+              "RelativeToolTip": "Accesos\\CLS\\UsernameValidationRule.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T21:53:59.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditarUsuarioWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\EditarUsuarioWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EditarUsuarioWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\EditarUsuarioWindow.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\EditarUsuarioWindow.xaml.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAQwDEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T21:35:39.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\App.xaml",
+              "RelativeDocumentMoniker": "Accesos\\App.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\App.xaml",
+              "RelativeToolTip": "Accesos\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-20T19:40:23.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Consultas.cs",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\DataLayer\\Consultas.cs",
+              "RelativeDocumentMoniker": "DataLayer\\Consultas.cs",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\DataLayer\\Consultas.cs",
+              "RelativeToolTip": "DataLayer\\Consultas.cs",
+              "ViewState": "AQIAAMAAAAAAAAAAAAAAAPEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T19:02:27.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsuarioContent.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\UsuarioContent.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UsuarioContent.xaml.cs",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\UsuarioContent.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\UsuarioContent.xaml.cs",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAowJsAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T17:44:47.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\App.xaml",
+              "RelativeDocumentMoniker": "InventiSys\\App.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\App.xaml",
+              "RelativeToolTip": "InventiSys\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-20T17:06:40.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditarUsuarioWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\EditarUsuarioWindow.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EditarUsuarioWindow.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\EditarUsuarioWindow.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\EditarUsuarioWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-20T20:30:06.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioContent.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\UsuarioContent.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UsuarioContent.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\Accesos\\GUI\\UsuarioContent.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\UsuarioContent.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-20T17:06:32.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UsuarioView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\GUI\\UsuarioView.xaml.cs",
+              "RelativeDocumentMoniker": "InventiSys\\GUI\\UsuarioView.xaml.cs",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\GUI\\UsuarioView.xaml.cs",
+              "RelativeToolTip": "InventiSys\\GUI\\UsuarioView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAmwBQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T16:32:28.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UsuarioView.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\GUI\\UsuarioView.xaml",
+              "RelativeDocumentMoniker": "InventiSys\\GUI\\UsuarioView.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\GUI\\UsuarioView.xaml",
+              "RelativeToolTip": "InventiSys\\GUI\\UsuarioView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-20T16:14:23.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsuarioEdicionView.xaml",
+              "DocumentMoniker": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\GUI\\UsuarioEdicionView.xaml",
+              "RelativeDocumentMoniker": "InventiSys\\GUI\\UsuarioEdicionView.xaml",
+              "ToolTip": "C:\\Users\\Home\\source\\repos\\InventiSys\\InventiSys\\GUI\\UsuarioEdicionView.xaml",
+              "RelativeToolTip": "InventiSys\\GUI\\UsuarioEdicionView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-19T21:34:42.083Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
