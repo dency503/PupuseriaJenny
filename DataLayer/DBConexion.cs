@@ -5,7 +5,7 @@ namespace DataLayer
     public class DBConexion
     {
         protected MySqlConnection _CONEXION;
-        private const string ServerIP = "127.0.0.1"; // IP del servidor MySQL
+        private const string ServerIP = "localhost"; // IP del servidor MySQL
         private const string Database = "GestionRestauranteDB";
         private const string UserId = "root";
         private const string Password = "root";

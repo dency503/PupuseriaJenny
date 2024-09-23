@@ -6,13 +6,14 @@
         xmlns:Ico="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:Accesos.GUI"
         mc:Ignorable="d"
+        WindowStyle="ToolWindow"
         Title="Editar Usuario" Height="410" Width="499"
         Background="#f8f8f8"
 
         AllowsTransparency="False"
         BorderBrush="#d0c0ff"
         BorderThickness="1"
-        WindowStartupLocation="CenterScreen" WindowStyle="None"  >
+        WindowStartupLocation="CenterScreen"   >
 
     <StackPanel Margin="10">
         <Label Content="ID Usuario:" FontWeight="Bold"/>

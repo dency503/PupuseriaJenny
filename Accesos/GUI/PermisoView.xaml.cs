@@ -1,5 +1,4 @@
-﻿using Accesos.GUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InventiSys.GUI
+namespace Accesos.GUI
 {
     /// <summary>
-    /// Lógica de interacción para UsuarioView.xaml
+    /// Lógica de interacción para PermisoView.xaml
     /// </summary>
-    public partial class UsuarioView : Window
+    public partial class PermisoView : UserControl
     {
-         
-        public UsuarioView()
+        public PermisoView()
         {
             InitializeComponent();
-            
-            MainContentControl.Content = new UsuarioContent();
-        }
-
-        private void Acessos_Click(object sender, RoutedEventArgs e)
-        {
-            MainContentControl.Content = new UsuarioContent();
         }
     }
 }

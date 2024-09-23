@@ -112,6 +112,7 @@ namespace Accesos.CLS
                 return convertirCadena.ToString();
             }
         }
+
         public static bool UsuarioExiste(string oUsuario)
         {
             DataTable Resultado = new DataTable();

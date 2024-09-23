@@ -10,24 +10,26 @@ namespace Accesos.GUI
     public partial class GestionUsuarioView : UserControl
     {
         private ObservableCollection<Usuarios> _usuarios = new ObservableCollection<Usuarios>();
-
+        private int _paginaActual = 1;
+        private const int _tamanoPagina = 10;
+        int totalPaginas;
         public GestionUsuarioView()
         {
             InitializeComponent();
             // Configurar el timer para actualizar datos periódicamente
-           
-         
+
+
             Cargar();
         }
 
         private void Cargar()
         {
-            
+
         }
 
         private void FiltrarLocalmente()
         {
-             try
+            try
             {
                 string filter = tbFiltro.Text.Trim().ToLower();
                 if (string.IsNullOrWhiteSpace(filter))
@@ -44,13 +46,13 @@ namespace Accesos.GUI
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al filtrar datos: {ex.Message}");
-            } 
+            }
         }
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
             UsuarioEdicionView usuarioEdicionView = new UsuarioEdicionView();
-    
+
             NavigationManager.Navigate(usuarioEdicionView, this.Parent as ContentControl);
         }
 
@@ -69,7 +71,7 @@ namespace Accesos.GUI
                         txtID = { Text = (dgUsuarios.SelectedItem as DataRowView)?["IDUsuario"].ToString() },
                         txtUsuario = { Text = (dgUsuarios.SelectedItem as DataRowView)?["Usuario"].ToString() },
                         txtContraseña = { Password = (dgUsuarios.SelectedItem as DataRowView)?["Contraseña"].ToString() },
-                        
+
                     };
                     Cargar();
                 }
@@ -155,6 +157,11 @@ namespace Accesos.GUI
             {
                 MessageBox.Show($"Error al actualizar datos: {ex.Message}");
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

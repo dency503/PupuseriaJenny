@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using DataLayer;
 
 namespace Accesos.GUI
@@ -25,8 +12,10 @@ namespace Accesos.GUI
         SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
         private Boolean _RegistroExitoso = false;
         public bool RegistroExitoso { get => _RegistroExitoso; private set => _RegistroExitoso = value; }
-        
 
+        private int _paginaActual = 1;
+        private const int _tamanoPagina = 10;
+        int totalPaginas;
         private Boolean Validar()
         {
             Boolean valido = true;
@@ -34,15 +23,15 @@ namespace Accesos.GUI
             {
                 if (txtUsuario.Text.Trim().Length == 0)
                 {
-                   // Notificador.SetError(tbUsuario, "Este campo no puede estar vacío");
+                    // Notificador.SetError(tbUsuario, "Este campo no puede estar vacío");
                     valido = false;
                 }
                 if (txtContraseña.Password.Trim().Length == 0)
                 {
-                  //  Notificador.SetError(tbContraseña, "Este campo no puede estar vacío");
+                    //  Notificador.SetError(tbContraseña, "Este campo no puede estar vacío");
                     valido = false;
                 }
-                
+
             }
             catch (Exception)
             {
@@ -136,5 +125,5 @@ namespace Accesos.GUI
             }
         }
     }
-   
+
 }

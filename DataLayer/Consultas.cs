@@ -150,7 +150,35 @@ namespace DataLayer
             }
             return Resultado;
         }
+        public static DataTable Empleados(int pagina, int tamanoPagina)
+        {
+            DataTable Resultado = new DataTable();
+            string Consulta = @"
+    SELECT * FROM empleados
+    ORDER BY nombre ASC
+    LIMIT @offset, @limit;"; // Para SQL Server
 
+            // Crear un diccionario para los parámetros
+            var parametros = new Dictionary<string, object>
+    {
+        { "@offset", (pagina - 1) * tamanoPagina },
+        { "@limit", tamanoPagina }
+    };
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Ejecutar la consulta con los parámetros
+                Resultado = operacion.Consultar(Consulta, parametros);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener roles: " + ex.Message);
+                // Manejo adicional de errores puede ser implementado aquí
+            }
+
+            return Resultado; // Devuelve el DataTable con los resultados
+        }
         public static DataTable ROLES()
         {
             DataTable Resultado = new DataTable();
@@ -165,6 +193,50 @@ namespace DataLayer
 
             }
             return Resultado;
+        }
+        public static DataTable Usuarios()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT * FROM usuarios ORDER BY usuarios ASC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
+        public static DataTable ROLES(int pagina, int tamanoPagina)
+        {
+            DataTable Resultado = new DataTable();
+            string Consulta = @"
+    SELECT * FROM roles
+    ORDER BY Rol ASC
+    LIMIT @offset, @limit;"; // Para SQL Server
+
+            // Crear un diccionario para los parámetros
+            var parametros = new Dictionary<string, object>
+    {
+        { "@offset", (pagina - 1) * tamanoPagina },
+        { "@limit", tamanoPagina }
+    };
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Ejecutar la consulta con los parámetros
+                Resultado = operacion.Consultar(Consulta, parametros);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener roles: " + ex.Message);
+                // Manejo adicional de errores puede ser implementado aquí
+            }
+
+            return Resultado; // Devuelve el DataTable con los resultados
         }
         public static DataTable PRODUCTOS()
         {
@@ -715,6 +787,50 @@ namespace DataLayer
         {
             int totalUsuarios = 0;
             string consulta = "SELECT COUNT(*) FROM usuarios"; // Cambia 'usuarios' al nombre real de tu tabla
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Ejecutar la consulta y obtener el resultado
+                DataTable resultado = operacion.Consultar(consulta);
+                if (resultado.Rows.Count > 0)
+                {
+                    totalUsuarios = Convert.ToInt32(resultado.Rows[0][0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Maneja la excepción si es necesario
+                Console.WriteLine("Error al contar usuarios: " + ex.Message);
+            }
+            return totalUsuarios;
+        }
+        public static int ContarRoles()
+        {
+            int totalUsuarios = 0;
+            string consulta = "SELECT COUNT(*) FROM Roles"; // Cambia 'usuarios' al nombre real de tu tabla
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Ejecutar la consulta y obtener el resultado
+                DataTable resultado = operacion.Consultar(consulta);
+                if (resultado.Rows.Count > 0)
+                {
+                    totalUsuarios = Convert.ToInt32(resultado.Rows[0][0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Maneja la excepción si es necesario
+                Console.WriteLine("Error al contar usuarios: " + ex.Message);
+            }
+            return totalUsuarios;
+        }
+        public static int ContarEmpleados()
+        {
+            int totalUsuarios = 0;
+            string consulta = "SELECT COUNT(*) FROM Empleados"; // Cambia 'usuarios' al nombre real de tu tabla
 
             DBOperacion operacion = new DBOperacion();
             try

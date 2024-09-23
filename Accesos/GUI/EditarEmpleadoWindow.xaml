@@ -1,0 +1,47 @@
+﻿<Window x:Class="Accesos.GUI.EditarEmpleadoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Accesos.GUI"
+         xmlns:Ico="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Editar Empleado" Height="450" Width="500
+        ">
+    <Grid>
+        <StackPanel Margin="10">
+            <Label Content="ID Empleado:" FontWeight="Bold"/>
+            <TextBox Name="txtIDEmpleado" Margin="0,0,0,10" IsReadOnly="True" Background="#e8e8e8"/>
+
+            <Label Content="Nombre:" FontWeight="Bold"/>
+            <TextBox Name="txtNombre" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
+
+            <Label Content="Cargo:" FontWeight="Bold"/>
+            <TextBox Name="txtCargo" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
+
+            <Label Content="Telefono:" FontWeight="Bold"/>
+            <TextBox Name="txtTelefono" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
+
+            <Label Content="Email:" FontWeight="Bold"/>
+            <TextBox Name="txtEmail" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                <Button Width="100" Style="{StaticResource gridEditButton}" Click="GuardarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Ico:PackIconMaterial Kind="ContentSave" Width="20" Height="20" Margin="0,0,5,0" />
+                        <TextBlock Text="Guardar" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Width="100" Margin="10,0,0,0" Style="{StaticResource gridRemoveButton}" Click="CancelarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Ico:PackIconMaterial Kind="Cancel" Width="20" Height="20" Margin="0,0,5,0" />
+                        <TextBlock Text="Cancelar" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

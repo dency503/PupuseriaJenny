@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Accesos.CLS;
-using InventiSys.GUI;
 using MahApps.Metro.IconPacks;
 
 namespace Accesos.GUI
@@ -23,70 +11,158 @@ namespace Accesos.GUI
     /// <summary>
     /// Lógica de interacción para UsuarioContent.xaml
     /// </summary>
-    public partial class UsuarioContent : UserControl
+    public partial class UsuarioContent : UserControl,ITab
     {
-        ObservableCollection<Usuarios> _usuarios = new ObservableCollection<Usuarios>();
+
+        UsuariosTab usuariosTab = new UsuariosTab();
+        EmpleadoTab empleadoTab = new EmpleadoTab();
+        RolesTab rolesTab;
         private int _paginaActual = 1;
         private const int _tamanoPagina = 10;
-        int totalPaginas;
+        public int TotalRegistros { get; set; }
         public UsuarioContent()
         {
             InitializeComponent();
-           
-            Cargar();
-           
+            TabContent.Content = usuariosTab;
 
+
+            Cargar();
+        }
+        private void ActualizarVista(ITab tab, string titulo)
+        {
+            lbRegistros.Text = tab.TotalRegistros.ToString() + $" {titulo} encontrado(s)";
+            TotalRegistros = (int)Math.Ceiling((double)tab.TotalRegistros / _tamanoPagina);
+            Titulo.Text = titulo;
         }
         private void Cargar()
         {
+            ProcesarTabs();
+        }
+        private void AddUsuario_Click(object sender, RoutedEventArgs e)
+{
+    try
+    {
+        EditarUsuarioWindow editarUsuarioWindow = new EditarUsuarioWindow();
+        editarUsuarioWindow.Show();
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
+    }
+}
+
+private void AddRol_Click(object sender, RoutedEventArgs e)
+{
+    try
+    {
+        EditarRolWindow editarRolWindow = new EditarRolWindow();
+        editarRolWindow.Show();
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
+    }
+}
+
+private void AddEmpleado_Click(object sender, RoutedEventArgs e)
+{
+    try
+    {
+        EditarEmpleadoWindow editarEmpleadoWindow = new EditarEmpleadoWindow();
+        editarEmpleadoWindow.Show();
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
+    }
+}
+        private void ActualizarVistaYBoton(string tipoTab, Action buttonClickAction, string buttonText,ITab tab)
+        {
+            // Actualizar la vista correspondiente y el texto del botón
+            ActualizarVista(tab,tipoTab);
+            textButton.Text = buttonText;
+
+         
+            
+        }
+
+        private void FiltrarContenidoActual(string filter)
+        {
+            // Filtrar según el contenido activo en el TabControl
+            if (TabContent.Content == usuariosTab)
+            {
+                FiltrarDatos(filter, usuariosTab.usersDataGrid, usuariosTab.Items, u => u.Usuario.ToLower().Contains(filter));
+            }
+            else if (TabContent.Content == rolesTab)
+            {
+                FiltrarDatos(filter, rolesTab.rolesDataGrid, rolesTab.Items, u => u.Rol.ToLower().Contains(filter));
+            }
+            else if (TabContent.Content == empleadoTab)
+            {
+                FiltrarDatos(filter, empleadoTab.usersDataGrid, empleadoTab.Items, u => u.Nombre.ToLower().Contains(filter));
+            }
+        }
+
+        private void ProcesarTabs()
+        {
             try
             {
-                // Obtener los datos y cargarlos en la colección ObservableCollection
-                int totalUsuarios = DataLayer.Consultas.ContarUsuarios();
-                lbRegistros.Text = totalUsuarios.ToString();
-
-                // Calcular el total de páginas
-                totalPaginas = (int)Math.Ceiling((double)totalUsuarios / _tamanoPagina);
-               
-                GenerarBotonesPaginacion(totalPaginas, _paginaActual);
-                DataTable dt = DataLayer.Consultas.USUARIOS(_paginaActual, _tamanoPagina);
-            
-                FiltrarLocalmente();
-                _usuarios.Clear();
-                foreach (DataRow row in dt.Rows)
+                if (TabContent.Content == usuariosTab)
                 {
-                    _usuarios.Add(new Usuarios
-                    {
-                        IDUsuario = Convert.ToInt32(row["IDUsuario"]),
-                        Usuario = row["Usuario"].ToString(),
-                        Contraseña = row["Contrasena"].ToString(),
-                        IDEmpleado = Convert.ToInt32(row["IDEmpleado"]),
-                        IDRol = Convert.ToInt32(row["IDRol"])
+                    ActualizarVista(usuariosTab, "Usuarios");
+                   
 
-                    });
+                    // Remover manejadores anteriores
+                    addUsuarios.Visibility = Visibility.Visible;
+                    addRol.Visibility = Visibility.Collapsed;
+                    addEmpleado.Visibility = Visibility.Collapsed;
                 }
-                usersDataGrid.ItemsSource = _usuarios;
-                lbRegistros.Text = totalUsuarios.ToString() + " Usuarios encontrado(s)";
+                else if (TabContent.Content == rolesTab)
+                {
+                    ActualizarVista(rolesTab, "Roles");
+                    
+
+                    // Remover manejadores anteriores
+                  
+                    addUsuarios.Visibility = Visibility.Collapsed;
+                    addRol.Visibility = Visibility.Visible;
+                    addEmpleado.Visibility = Visibility.Collapsed;
+                }
+                else if (TabContent.Content == empleadoTab)
+                {
+                    ActualizarVista(empleadoTab, "Empleados");
+                   
+                    addUsuarios.Visibility = Visibility.Collapsed;
+                    addRol.Visibility = Visibility.Collapsed;
+                    addEmpleado.Visibility = Visibility.Visible;
+                }
+
+                  
+
+                // Generar botones de paginación
+                GenerarBotonesPaginacion(TotalRegistros, _paginaActual);
+
+                // Filtrar datos según el contenido activo
+                string filter = txtFilter.Text.Trim().ToLower();
+                FiltrarContenidoActual(filter);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar datos: {ex.Message}");
             }
         }
-        private void FiltrarLocalmente()
+
+        public void FiltrarDatos<T>(string filtro, DataGrid dataGrid, ObservableCollection<T> items, Func<T, bool> filtroPredicado)
         {
             try
             {
-                string filter = txtFilter.Text.Trim().ToLower();
-                if (string.IsNullOrWhiteSpace(filter))
+                if (string.IsNullOrWhiteSpace(filtro))
                 {
-                    usersDataGrid.ItemsSource = _usuarios;
+                    dataGrid.ItemsSource = items;
                 }
                 else
                 {
-                    usersDataGrid.ItemsSource = new ObservableCollection<Usuarios>(
-                        _usuarios.Where(u => u.Usuario.ToLower().Contains(filter))
-                    );
+                    dataGrid.ItemsSource = new ObservableCollection<T>(items.Where(filtroPredicado));
                 }
             }
             catch (Exception ex)
@@ -94,6 +170,7 @@ namespace Accesos.GUI
                 MessageBox.Show($"Error al filtrar datos: {ex.Message}");
             }
         }
+       
         private void GenerarBotonesPaginacion(int totalPaginas, int paginaActual)
         {
             // Limpiar botones existentes
@@ -150,12 +227,12 @@ namespace Accesos.GUI
             {
                 EditarUsuarioWindow editarUsuarioWindow = new EditarUsuarioWindow();
                 editarUsuarioWindow.txtIDUsuario.Text = usuario.IDUsuario.ToString();
-                editarUsuarioWindow.txtUsuario.Text =usuario.Usuario.ToString();
+                editarUsuarioWindow.txtUsuario.Text = usuario.Usuario.ToString();
                 editarUsuarioWindow.cmbEmpleado.SelectedValue = usuario.IDEmpleado;
-                editarUsuarioWindow.cmbRol.SelectedValue=usuario.IDRol;
+                editarUsuarioWindow.cmbRol.SelectedValue = usuario.IDRol;
                 editarUsuarioWindow.txtContraseña.Password = usuario.Contraseña;
                 editarUsuarioWindow.ShowDialog();
-                
+
                 Cargar();
                 // Aquí puedes abrir una ventana de edición o realizar otras acciones
             }
@@ -173,12 +250,12 @@ namespace Accesos.GUI
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    
+
                     CLS.Usuarios oUsuario = new CLS.Usuarios();
                     oUsuario.IDUsuario = Convert.ToInt32(usuario.IDUsuario);
                     if (oUsuario.Eliminar())
                     {
-                        _usuarios.Remove(usuario); // Eliminar de la colección ObservableCollection
+                        usuariosTab.Items.Remove(usuario); // Eliminar de la colección ObservableCollection
                         MessageBox.Show($"Usuario {usuario.Usuario} eliminado.");
                     }
                     else
@@ -192,17 +269,63 @@ namespace Accesos.GUI
 
         private void CambiarPagina(int nuevaPagina)
         {
-            if (nuevaPagina < 1 || nuevaPagina > totalPaginas)
+            if (nuevaPagina < 1 || nuevaPagina > TotalRegistros)
                 return; // Evitar cambios fuera de rango
 
             _paginaActual = nuevaPagina;
             Cargar(); // Método que carga los datos según la página actual
-            GenerarBotonesPaginacion(totalPaginas, _paginaActual); // Regenerar botones
+            GenerarBotonesPaginacion(TotalRegistros, _paginaActual); // Regenerar botones
         }
 
         private void txtFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
-            FiltrarLocalmente();
+            string filter = txtFilter.Text.Trim().ToLower();
+            if (TabContent.Content == usuariosTab)
+            {
+                FiltrarDatos(filter, usuariosTab.usersDataGrid, usuariosTab.Items, u => u.Usuario.ToLower().Contains(filter));
+            }
+            if (TabContent.Content == rolesTab)
+            {
+                FiltrarDatos(filter, rolesTab.rolesDataGrid, rolesTab.Items, u => u.Rol.ToLower().Contains(filter));
+            }
+            if (TabContent.Content == empleadoTab)
+            {
+                FiltrarDatos(filter, empleadoTab.usersDataGrid, empleadoTab.Items, u => u.Nombre.ToLower().Contains(filter));
+
+            }
+
+        }
+
+        private void rolesButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (rolesTab == null)
+            {
+                rolesTab = new RolesTab();
+            }
+            TabContent.Content = rolesTab;
+
+            Cargar();
+
+
+        }
+
+        private void UsuariosButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (usuariosTab == null) { 
+                usuariosTab = new UsuariosTab();
+            }
+            TabContent.Content = usuariosTab;
+            Cargar();
+        }
+
+        private void EmpleadosButton_Click(object sender, RoutedEventArgs e)
+        {
+            //empleadoTab = ;
+            if(empleadoTab == null) {
+                empleadoTab = new EmpleadoTab();
+            }
+            TabContent.Content = empleadoTab;
+            Cargar();
         }
     }
 }
