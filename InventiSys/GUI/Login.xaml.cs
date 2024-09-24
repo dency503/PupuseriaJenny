@@ -30,7 +30,7 @@ namespace InventiSys.GUI
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             string usuario = tbUsuario.Text.Trim();
-            string contraseña = Accesos.CLS.Usuarios.ConvertirContraseña(tbContraseña.Password.Trim());
+            string contraseña = tbContraseña.Password.Trim();
 
             try
             {

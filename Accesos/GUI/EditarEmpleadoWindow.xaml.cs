@@ -53,17 +53,17 @@ namespace Accesos.GUI
 
                     try
                     {
-                        oEmpleado.IDEmpleado = Convert.ToInt32(txtIDEmpleado.Text);
+                        oEmpleado.idEmpleados = Convert.ToInt32(txtIDEmpleado.Text);
                     }
                     catch (Exception)
                     {
-                        oEmpleado.IDEmpleado = 0;
+                        oEmpleado.idEmpleados = 0;
                     }
 
-                    oEmpleado.Nombre = txtNombre.Text;
-                    oEmpleado.Cargo = txtCargo.Text;
-                    oEmpleado.Telefono = txtTelefono.Text;
-                    oEmpleado.Email = txtEmail.Text;
+                    oEmpleado.nombresEmpleado = txtNombre.Text;
+                    oEmpleado.idCargo = Convert.ToInt32(txtCargo.Text);
+                    oEmpleado.telefono = txtTelefono.Text;
+                    oEmpleado.email = txtEmail.Text;
 
                     if (txtIDEmpleado.Text.Trim().Length == 0)
                     {

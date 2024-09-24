@@ -52,7 +52,7 @@
                                         <TextBlock Text="Acessos"/>
                                     </StackPanel>
                                 </Button>
-                                <Button Style="{StaticResource menuButton}" >
+                                <Button Style="{StaticResource menuButton}" x:Name="Permisos" Click="Permisos_Click" >
                                     <StackPanel Orientation="Horizontal">
                                         <Icon:PackIconMaterial Kind="Shield" Style="{StaticResource menuButtonIcon}"/>
                                         <TextBlock Text="Permisos"/>

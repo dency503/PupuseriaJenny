@@ -99,7 +99,7 @@ private void AddEmpleado_Click(object sender, RoutedEventArgs e)
             }
             else if (TabContent.Content == empleadoTab)
             {
-                FiltrarDatos(filter, empleadoTab.usersDataGrid, empleadoTab.Items, u => u.Nombre.ToLower().Contains(filter));
+                FiltrarDatos(filter, empleadoTab.usersDataGrid, empleadoTab.Items, u => u.nombresEmpleado.ToLower().Contains(filter));
             }
         }
 
@@ -290,7 +290,7 @@ private void AddEmpleado_Click(object sender, RoutedEventArgs e)
             }
             if (TabContent.Content == empleadoTab)
             {
-                FiltrarDatos(filter, empleadoTab.usersDataGrid, empleadoTab.Items, u => u.Nombre.ToLower().Contains(filter));
+                FiltrarDatos(filter, empleadoTab.usersDataGrid, empleadoTab.Items, u => u.nombresEmpleado.ToLower().Contains(filter));
 
             }
 

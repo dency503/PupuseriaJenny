@@ -311,7 +311,38 @@ namespace DataLayer
 
             return Resultado;
         }
+        public static DataTable Permisos(int pagina, int tamanoPagina)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"
+        SELECT 
+            *
+        FROM 
+            Permisos
+        ORDER BY 
+            Rol
+        LIMIT @offset, @limit;"; // Agregar LIMIT para la paginación
 
+            // Crear un diccionario para los parámetros
+            var parametros = new Dictionary<string, object>
+    {
+        { "@offset", (pagina - 1) * tamanoPagina },
+        { "@limit", tamanoPagina }
+    };
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Usar el método Consultar con parámetros
+                Resultado = operacion.Consultar(Consulta, parametros);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en la consulta: " + ex.Message);
+            }
+
+            return Resultado;
+        }
 
         public static DataTable ProductosNoIngredientes()
         {
@@ -781,6 +812,28 @@ namespace DataLayer
                 Console.WriteLine(ex.Message);
             }
             return resultado;
+        }
+        public static int ContarPermisos()
+        {
+            int totalUsuarios = 0;
+            string consulta = "SELECT COUNT(*) FROM Permisos"; // Cambia 'usuarios' al nombre real de tu tabla
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Ejecutar la consulta y obtener el resultado
+                DataTable resultado = operacion.Consultar(consulta);
+                if (resultado.Rows.Count > 0)
+                {
+                    totalUsuarios = Convert.ToInt32(resultado.Rows[0][0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Maneja la excepción si es necesario
+                Console.WriteLine("Error al contar usuarios: " + ex.Message);
+            }
+            return totalUsuarios;
         }
 
         public static int ContarUsuarios()

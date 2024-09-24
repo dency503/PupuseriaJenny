@@ -29,11 +29,11 @@ namespace Accesos.GUI
             if (empleado != null)
             {
                 EditarEmpleadoWindow editarEmpleadoWindow = new EditarEmpleadoWindow();
-                editarEmpleadoWindow.txtIDEmpleado.Text = empleado.IDEmpleado.ToString();
-                editarEmpleadoWindow.txtNombre.Text = empleado.Nombre.ToString();
-                editarEmpleadoWindow.txtCargo.Text = empleado.Cargo.ToString();
-                editarEmpleadoWindow.txtTelefono.Text = empleado.Telefono.ToString();
-                editarEmpleadoWindow.txtEmail.Text = empleado.Email.ToString();
+                editarEmpleadoWindow.txtIDEmpleado.Text = empleado.idEmpleados.ToString();
+                editarEmpleadoWindow.txtNombre.Text = empleado.nombresEmpleado.ToString();
+                editarEmpleadoWindow.txtCargo.Text = empleado.idCargo.ToString();
+                editarEmpleadoWindow.txtTelefono.Text = empleado.telefono.ToString();
+                editarEmpleadoWindow.txtEmail.Text = empleado.email.ToString();
                 editarEmpleadoWindow.ShowDialog();
 
                 Cargar();
@@ -48,21 +48,21 @@ namespace Accesos.GUI
             if (empleado != null)
             {
                 // Confirmar eliminación
-                MessageBoxResult result = MessageBox.Show($"¿Estás seguro de que deseas eliminar a {empleado.Nombre}?", "Confirmar eliminación", MessageBoxButton.YesNo);
+                MessageBoxResult result = MessageBox.Show($"¿Estás seguro de que deseas eliminar a {empleado.nombresEmpleado}?", "Confirmar eliminación", MessageBoxButton.YesNo);
 
                 if (result == MessageBoxResult.Yes)
                 {
 
                     CLS.Empleados oUsuario = new CLS.Empleados();
-                    oUsuario.IDEmpleado = Convert.ToInt32(empleado.IDEmpleado);
+                    oUsuario.idEmpleados = Convert.ToInt32(empleado.idEmpleados);
                     if (oUsuario.Eliminar())
                     {
                         Items.Remove(empleado); // Eliminar de la colección ObservableCollection
-                        MessageBox.Show($"Empleado {empleado.Nombre} eliminado.");
+                        MessageBox.Show($"Empleado {empleado.nombresEmpleado} eliminado.");
                     }
                     else
                     {
-                        MessageBox.Show($"Error al eliminar el empleado {empleado.IDEmpleado}.");
+                        MessageBox.Show($"Error al eliminar el empleado {empleado.idEmpleados}.");
                     }
                 }
             }
@@ -78,11 +78,14 @@ namespace Accesos.GUI
                 {
                     items.Add(new Empleados
                     {
-                        IDEmpleado = Convert.ToInt32(row["IDEmpleado"]),
-                        Nombre = row["Nombre"].ToString(),
-                        Cargo = row["Cargo"].ToString(),
-                        Email= row["Email"].ToString(),
-                        Telefono = row["Telefono"].ToString()
+                        idEmpleados = Convert.ToInt32(row["idEmpleados"]),
+                        nombresEmpleado = row["nombresEmpleado"].ToString(),
+                        apellidosEmpleado = row["apellidosEmpleado"].ToString(),
+                        email = row["email"].ToString(),
+                        telefono = row["telefono"].ToString(),
+                        direccion = row["direccion"].ToString(),
+                        fechaNacimiento = DateTime.TryParse(row["fechaNacimiento"].ToString(), out DateTime fecha) ? fecha : DateTime.MinValue,
+                        idCargo = Convert.ToInt32(row["idCargo"].ToString())
 
                     });
 

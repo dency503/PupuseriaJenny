@@ -5,19 +5,22 @@ namespace Accesos.CLS
 {
     public class Empleados
     {
-        public int IDEmpleado { get; set; }
-        public string Nombre { get; set; }
-        public string Cargo { get; set; }
-        public string Telefono { get; set; }
-        public string Email { get; set; }
+        public int idEmpleados { get; set; }
+        public string nombresEmpleado { get; set; }
+        public string apellidosEmpleado { get; set; }
+        public string telefono { get; set; }
+        public string direccion { get; set; }
+        public string email { get; set; }
+        public DateTime fechaNacimiento { get; set; }
+        public int idCargo { get; set; }
 
         public bool Insertar()
         {
             bool resultado = false;
             DBOperacion operacion = new DBOperacion();
             StringBuilder sentencia = new StringBuilder();
-            sentencia.Append("INSERT INTO empleados(Nombre, Cargo, Telefono, Email) VALUES(");
-            sentencia.Append("'" + Nombre + "','" + Cargo + "','" + Telefono + "','" + Email + "');");
+            sentencia.Append("INSERT INTO Empleados(nombresEmpleado, apellidosEmpleado, telefono, direccion, email, fechaNacimiento, idCargo) VALUES(");
+            sentencia.Append("'" + nombresEmpleado + "', '" + apellidosEmpleado + "', '" + telefono + "', '" + direccion + "', '" + email + "', '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', " + idCargo + ");");
             try
             {
                 if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
@@ -41,12 +44,15 @@ namespace Accesos.CLS
             bool resultado = false;
             DBOperacion operacion = new DBOperacion();
             StringBuilder sentencia = new StringBuilder();
-            sentencia.Append("UPDATE empleados SET ");
-            sentencia.Append("Nombre = '" + Nombre + "'," +
-                             "Cargo = '" + Cargo + "'," +
-                             "Telefono = '" + Telefono + "'," +
-                             "Email = '" + Email + "'");
-            sentencia.Append("WHERE IDEmpleado = " + IDEmpleado + "; ");
+            sentencia.Append("UPDATE Empleados SET ");
+            sentencia.Append("nombresEmpleado = '" + nombresEmpleado + "', " +
+                             "apellidosEmpleado = '" + apellidosEmpleado + "', " +
+                             "telefono = '" + telefono + "', " +
+                             "direccion = '" + direccion + "', " +
+                             "email = '" + email + "', " +
+                             "fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', " +
+                             "idCargo = " + idCargo);
+            sentencia.Append(" WHERE idEmpleados = " + idEmpleados + ";");
             try
             {
                 if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
@@ -70,8 +76,8 @@ namespace Accesos.CLS
             bool resultado = false;
             DBOperacion operacion = new DBOperacion();
             StringBuilder sentencia = new StringBuilder();
-            sentencia.Append("DELETE FROM empleados ");
-            sentencia.Append("WHERE IDEmpleado = " + IDEmpleado + ";");
+            sentencia.Append("DELETE FROM Empleados ");
+            sentencia.Append("WHERE idEmpleados = " + idEmpleados + ";");
             try
             {
                 if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)

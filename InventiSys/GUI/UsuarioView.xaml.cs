@@ -33,5 +33,10 @@ namespace InventiSys.GUI
         {
             MainContentControl.Content = new UsuarioContent();
         }
+
+        private void Permisos_Click(object sender, RoutedEventArgs e)
+        {
+            MainContentControl.Content = new PermisoView();
+        }
     }
 }

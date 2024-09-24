@@ -23,6 +23,20 @@ namespace Accesos.GUI
         public PermisoView()
         {
             InitializeComponent();
+            TabContent.Content = new PermisoTab();
+        }
+
+        private void UsuariosButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void txtFilter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+        private void AddPermiso_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

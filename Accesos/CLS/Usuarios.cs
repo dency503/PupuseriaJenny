@@ -7,11 +7,11 @@ namespace Accesos.CLS
 {
     public class Usuarios
     {
-        Int32 _IDUsuario;
+        int _IDUsuario;
         string _Usuario;
         string _Contraseña;
-        Int32 _IDEmpleado;
-        Int32 _IDRol;
+        int _IDEmpleado;
+        int _IDRol;
 
         public int IDUsuario { get => _IDUsuario; set => _IDUsuario = value; }
         public string Usuario { get => _Usuario; set => _Usuario = value; }
@@ -19,95 +19,98 @@ namespace Accesos.CLS
         public int IDEmpleado { get => _IDEmpleado; set => _IDEmpleado = value; }
         public int IDRol { get => _IDRol; set => _IDRol = value; }
 
-        public Boolean Insertar()
+        public bool Insertar()
         {
-            Boolean Resultado = false;
-            DataLayer.DBOperacion Operacion = new DataLayer.DBOperacion();
-            StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
-            Sentencia.Append("INSERT INTO usuarios(Usuario, Contraseña, IDEmpleado, IDRol) VALUES(");
-            Sentencia.Append("'" + Usuario + "', ");
-            Sentencia.Append("'" + Usuarios.ConvertirContraseña(Contraseña) + "', ");
-            Sentencia.Append("'" + IDEmpleado + "', ");
-            Sentencia.Append("'" + IDRol + "');");
+            bool resultado = false;
+            DBOperacion operacion = new DBOperacion();
+            StringBuilder sentencia = new StringBuilder();
+            sentencia.Append("INSERT INTO Usuario(Usuario, Contrasenia, idEmpleado, idRol) VALUES(");
+            sentencia.Append("'" + Usuario + "', ");
+            sentencia.Append("'" + Usuarios.ConvertirContrasenia(Contraseña) + "', ");
+            sentencia.Append("'" + IDEmpleado + "', ");
+            sentencia.Append("'" + IDRol + "');");
             try
             {
-                if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)
+                if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
                 {
-                    Resultado = true;
+                    resultado = true;
                 }
                 else
                 {
-                    Resultado = false;
+                    resultado = false;
                 }
             }
             catch (Exception)
             {
-                Resultado = false;
+                resultado = false;
             }
-            return Resultado;
+            return resultado;
         }
-        public Boolean Actualizar()
+
+        public bool Actualizar()
         {
-            Boolean Resultado = false;
-            DataLayer.DBOperacion Operacion = new DataLayer.DBOperacion();
-            StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
-            Sentencia.Append("UPDATE usuarios SET ");
-            Sentencia.Append("Usuario = '" + _Usuario + "', ");
-            Sentencia.Append("Contraseña = '" + Usuarios.ConvertirContraseña(_Contraseña) + "', ");
-            Sentencia.Append("IDEmpleado = '" + _IDEmpleado + "', ");
-            Sentencia.Append("IDRol = '" + _IDRol + "' ");
-            Sentencia.Append("WHERE IDUsuario = " + _IDUsuario + "; ");
+            bool resultado = false;
+            DBOperacion operacion = new DBOperacion();
+            StringBuilder sentencia = new StringBuilder();
+            sentencia.Append("UPDATE Usuario SET ");
+            sentencia.Append("Usuario = '" + _Usuario + "', ");
+            sentencia.Append("Contrasenia = '" + Usuarios.ConvertirContrasenia(_Contraseña) + "', ");
+            sentencia.Append("idEmpleado = '" + _IDEmpleado + "', ");
+            sentencia.Append("idRol = '" + _IDRol + "' ");
+            sentencia.Append("WHERE idUsuario = " + _IDUsuario + ";");
             try
             {
-                if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)
+                if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
                 {
-                    Resultado = true;
+                    resultado = true;
                 }
                 else
                 {
-                    Resultado = false;
+                    resultado = false;
                 }
             }
             catch (Exception)
             {
-                Resultado = false;
+                resultado = false;
             }
-            return Resultado;
+            return resultado;
         }
-        public Boolean Eliminar()
+
+        public bool Eliminar()
         {
-            Boolean Resultado = false;
-            DataLayer.DBOperacion Operacion = new DataLayer.DBOperacion(); // Agregar referencias= Referencias-Agregar referencia
-            StringBuilder Sentencia = new StringBuilder(); // Objeto para construir cadenas complejas
-            Sentencia.Append("DELETE FROM usuarios ");
-            Sentencia.Append("WHERE IDUsuario = " + _IDUsuario + ";");
+            bool resultado = false;
+            DBOperacion operacion = new DBOperacion();
+            StringBuilder sentencia = new StringBuilder();
+            sentencia.Append("DELETE FROM Usuario ");
+            sentencia.Append("WHERE idUsuario = " + _IDUsuario + ";");
             try
             {
-                if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)
+                if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
                 {
-                    Resultado = true;
+                    resultado = true;
                 }
                 else
                 {
-                    Resultado = false;
+                    resultado = false;
                 }
             }
             catch (Exception)
             {
-                Resultado = false;
+                resultado = false;
             }
-            return Resultado;
+            return resultado;
         }
-        public static string ConvertirContraseña(string cContraseña)
+
+        public static string ConvertirContrasenia(string contrasenia)
         {
-            using (SHA256 sha256Hash = SHA256.Create()) // 'using' asegura que el objeto SHA256 se libere. SHA256.Create() crea una instancia.
+            using (SHA256 sha256Hash = SHA256.Create())
             {
-                byte[] ConvertirBytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(cContraseña)); // Convierte la cadena en un arreglo de bytes. Procesa esos bytes y devuelve un arreglo de bytes.
+                byte[] convertirBytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contrasenia));
 
                 StringBuilder convertirCadena = new StringBuilder();
-                for (int i = 0; i < ConvertirBytes.Length; i++)
+                for (int i = 0; i < convertirBytes.Length; i++)
                 {
-                    convertirCadena.Append(ConvertirBytes[i].ToString("x2")); // Convierte cada byte a una cadena hexadecimal usando "x2" que representa los bytes en formato hexadecimal de dos caracteres.
+                    convertirCadena.Append(convertirBytes[i].ToString("x2"));
                 }
                 return convertirCadena.ToString();
             }
@@ -115,18 +118,18 @@ namespace Accesos.CLS
 
         public static bool UsuarioExiste(string oUsuario)
         {
-            DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT Usuario FROM Usuarios WHERE Usuario = '" + oUsuario + "';";
+            DataTable resultado = new DataTable();
+            string consulta = @"SELECT Usuario FROM Usuario WHERE Usuario = '" + oUsuario + "';";
             DBOperacion operacion = new DBOperacion();
             try
             {
-                Resultado = operacion.Consultar(Consulta);
+                resultado = operacion.Consultar(consulta);
             }
             catch (Exception)
             {
-
+                // Manejo de excepciones si es necesario
             }
-            return Resultado.Rows.Count > 0;
+            return resultado.Rows.Count > 0;
         }
     }
 }

@@ -58,5 +58,10 @@ namespace InventiSys.GUI
         {
             //MainContent.Content = new GestionUsuarioView(); // Asegúrate de que "GestionUsuarioView" esté correctamente definido.
         }
+
+        private void Permisos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

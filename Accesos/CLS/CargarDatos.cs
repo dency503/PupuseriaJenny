@@ -88,8 +88,8 @@ namespace Accesos.CLS
                 {
                     items.Add(new Empleados
                     {
-                        IDEmpleado = Convert.ToInt32(row["IDEmpleado"]),
-                        Nombre = row["Nombre"].ToString()
+                        idEmpleados = Convert.ToInt32(row["idEmpleados"]),
+                        nombresEmpleado = row["nombresEmpleado"].ToString()
                     });
 
                 },
