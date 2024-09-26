@@ -8,17 +8,20 @@ using MahApps.Metro.IconPacks;
 
 namespace Accesos.GUI
 {
-    public partial class PermisoView : UserControl, ITab
+    /// <summary>
+    /// Lógica de interacción para ProductoContent.xaml
+    /// </summary>
+    public partial class ProductosView : UserControl, ITab
     {
-        PermisoTab permisoTab = new PermisoTab();
+        ProductosTab productosTab = new ProductosTab();
         private int _paginaActual = 1;
         private const int _tamanoPagina = 10;
         public int TotalRegistros { get; set; }
 
-        public PermisoView()
+        public ProductosView()
         {
             InitializeComponent();
-            TabContent.Content = permisoTab;
+            TabContent.Content = productosTab;
             Cargar();
         }
 
@@ -34,12 +37,12 @@ namespace Accesos.GUI
             ProcesarTabs();
         }
 
-        private void AddPermiso_Click(object sender, RoutedEventArgs e)
+        private void AddProducto_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                EditarPermisoWindow editarPermisoWindow = new EditarPermisoWindow();
-                editarPermisoWindow.Show();
+                EditarProductoWindow editarProductoWindow = new EditarProductoWindow();
+                editarProductoWindow.Show();
             }
             catch (Exception ex)
             {
@@ -49,9 +52,9 @@ namespace Accesos.GUI
 
         private void FiltrarContenidoActual(string filter)
         {
-            if (TabContent.Content == permisoTab)
+            if (TabContent.Content == productosTab)
             {
-                FiltrarDatos(filter, permisoTab.usersDataGrid, permisoTab.Items, p => p.IDPermiso.ToString().Contains(filter));
+                FiltrarDatos(filter, productosTab.usersDataGrid, productosTab.Items, p => p.NombreProducto.ToLower().Contains(filter));
             }
         }
 
@@ -59,14 +62,17 @@ namespace Accesos.GUI
         {
             try
             {
-                if (TabContent.Content == permisoTab)
+                if (TabContent.Content == productosTab)
                 {
-                    ActualizarVista(permisoTab, "Permisos");
-                    addPermiso.Visibility = Visibility.Visible;
+                    ActualizarVista(productosTab, "Productos");
+
+                    
                 }
 
+                // Generar botones de paginación
                 GenerarBotonesPaginacion(TotalRegistros, _paginaActual);
 
+                // Filtrar datos según el contenido activo
                 string filter = txtFilter.Text.Trim().ToLower();
                 FiltrarContenidoActual(filter);
             }
@@ -150,7 +156,10 @@ namespace Accesos.GUI
         private void txtFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
             string filter = txtFilter.Text.Trim().ToLower();
-            FiltrarContenidoActual(filter);
+            if (TabContent.Content == productosTab)
+            {
+                FiltrarDatos(filter, productosTab.usersDataGrid, productosTab.Items, p => p.NombreProducto.ToLower().Contains(filter));
+            }
         }
     }
 }

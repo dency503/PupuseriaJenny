@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using Accesos.CLS;
 
 namespace Accesos.GUI
@@ -31,7 +19,7 @@ namespace Accesos.GUI
             {
                 if (txtNombre.Text.Trim().Length == 0)
                 {
-                   // Notificador.SetError(tbNombre, "Este campo no puede estar vacío");
+                    // Notificador.SetError(tbNombre, "Este campo no puede estar vacío");
                     valido = false;
                 }
                 // Agregar más validaciones si es necesario para otros campos

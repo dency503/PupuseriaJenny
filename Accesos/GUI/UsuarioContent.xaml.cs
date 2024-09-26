@@ -11,7 +11,7 @@ namespace Accesos.GUI
     /// <summary>
     /// Lógica de interacción para UsuarioContent.xaml
     /// </summary>
-    public partial class UsuarioContent : UserControl,ITab
+    public partial class UsuarioContent : UserControl, ITab
     {
 
         UsuariosTab usuariosTab = new UsuariosTab();
@@ -39,51 +39,51 @@ namespace Accesos.GUI
             ProcesarTabs();
         }
         private void AddUsuario_Click(object sender, RoutedEventArgs e)
-{
-    try
-    {
-        EditarUsuarioWindow editarUsuarioWindow = new EditarUsuarioWindow();
-        editarUsuarioWindow.Show();
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
-    }
-}
+        {
+            try
+            {
+                EditarUsuarioWindow editarUsuarioWindow = new EditarUsuarioWindow();
+                editarUsuarioWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
+            }
+        }
 
-private void AddRol_Click(object sender, RoutedEventArgs e)
-{
-    try
-    {
-        EditarRolWindow editarRolWindow = new EditarRolWindow();
-        editarRolWindow.Show();
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
-    }
-}
+        private void AddRol_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                EditarRolWindow editarRolWindow = new EditarRolWindow();
+                editarRolWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
+            }
+        }
 
-private void AddEmpleado_Click(object sender, RoutedEventArgs e)
-{
-    try
-    {
-        EditarEmpleadoWindow editarEmpleadoWindow = new EditarEmpleadoWindow();
-        editarEmpleadoWindow.Show();
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
-    }
-}
-        private void ActualizarVistaYBoton(string tipoTab, Action buttonClickAction, string buttonText,ITab tab)
+        private void AddEmpleado_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                EditarEmpleadoWindow editarEmpleadoWindow = new EditarEmpleadoWindow();
+                editarEmpleadoWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de edición: {ex.Message}");
+            }
+        }
+        private void ActualizarVistaYBoton(string tipoTab, Action buttonClickAction, string buttonText, ITab tab)
         {
             // Actualizar la vista correspondiente y el texto del botón
-            ActualizarVista(tab,tipoTab);
+            ActualizarVista(tab, tipoTab);
             textButton.Text = buttonText;
 
-         
-            
+
+
         }
 
         private void FiltrarContenidoActual(string filter)
@@ -110,7 +110,7 @@ private void AddEmpleado_Click(object sender, RoutedEventArgs e)
                 if (TabContent.Content == usuariosTab)
                 {
                     ActualizarVista(usuariosTab, "Usuarios");
-                   
+
 
                     // Remover manejadores anteriores
                     addUsuarios.Visibility = Visibility.Visible;
@@ -120,10 +120,10 @@ private void AddEmpleado_Click(object sender, RoutedEventArgs e)
                 else if (TabContent.Content == rolesTab)
                 {
                     ActualizarVista(rolesTab, "Roles");
-                    
+
 
                     // Remover manejadores anteriores
-                  
+
                     addUsuarios.Visibility = Visibility.Collapsed;
                     addRol.Visibility = Visibility.Visible;
                     addEmpleado.Visibility = Visibility.Collapsed;
@@ -131,13 +131,13 @@ private void AddEmpleado_Click(object sender, RoutedEventArgs e)
                 else if (TabContent.Content == empleadoTab)
                 {
                     ActualizarVista(empleadoTab, "Empleados");
-                   
+
                     addUsuarios.Visibility = Visibility.Collapsed;
                     addRol.Visibility = Visibility.Collapsed;
                     addEmpleado.Visibility = Visibility.Visible;
                 }
 
-                  
+
 
                 // Generar botones de paginación
                 GenerarBotonesPaginacion(TotalRegistros, _paginaActual);
@@ -170,7 +170,7 @@ private void AddEmpleado_Click(object sender, RoutedEventArgs e)
                 MessageBox.Show($"Error al filtrar datos: {ex.Message}");
             }
         }
-       
+
         private void GenerarBotonesPaginacion(int totalPaginas, int paginaActual)
         {
             // Limpiar botones existentes
@@ -311,7 +311,8 @@ private void AddEmpleado_Click(object sender, RoutedEventArgs e)
 
         private void UsuariosButton_Click(object sender, RoutedEventArgs e)
         {
-            if (usuariosTab == null) { 
+            if (usuariosTab == null)
+            {
                 usuariosTab = new UsuariosTab();
             }
             TabContent.Content = usuariosTab;
@@ -321,7 +322,8 @@ private void AddEmpleado_Click(object sender, RoutedEventArgs e)
         private void EmpleadosButton_Click(object sender, RoutedEventArgs e)
         {
             //empleadoTab = ;
-            if(empleadoTab == null) {
+            if (empleadoTab == null)
+            {
                 empleadoTab = new EmpleadoTab();
             }
             TabContent.Content = empleadoTab;

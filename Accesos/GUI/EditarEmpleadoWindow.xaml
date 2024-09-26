@@ -4,27 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Accesos.GUI"
-         xmlns:Ico="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:Ico="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
-        Title="Editar Empleado" Height="450" Width="500
-        ">
+        Title="Editar Empleado" Height="450" Width="500">
     <Grid>
         <StackPanel Margin="10">
-            <Label Content="ID Empleado:" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Ico:PackIconMaterial Kind="Account" Width="20" Height="20" Margin="0,0,5,0" BorderBrush="#e8e8e8" />
+                <Label Content="ID Empleado:" FontWeight="Bold"/>
+            </StackPanel>
             <TextBox Name="txtIDEmpleado" Margin="0,0,0,10" IsReadOnly="True" Background="#e8e8e8"/>
 
-            <Label Content="Nombre:" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Ico:PackIconMaterial Kind="AccountCircle" Width="20" Height="20" Margin="0,0,5,0" />
+                <Label Content="Nombre:" FontWeight="Bold"/>
+            </StackPanel>
             <TextBox Name="txtNombre" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
 
-            <Label Content="Cargo:" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Ico:PackIconMaterial Kind="BadgeAccount" Width="20" Height="20" Margin="0,0,5,0" />
+                <Label Content="Cargo:" FontWeight="Bold"/>
+            </StackPanel>
             <TextBox Name="txtCargo" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
 
-            <Label Content="Telefono:" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Ico:PackIconMaterial Kind="Phone" Width="20" Height="20" Margin="0,0,5,0" />
+                <Label Content="Teléfono:" FontWeight="Bold"/>
+            </StackPanel>
             <TextBox Name="txtTelefono" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
 
-            <Label Content="Email:" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Ico:PackIconMaterial Kind="Email" Width="20" Height="20" Margin="0,0,5,0" />
+                <Label Content="Email:" FontWeight="Bold"/>
+            </StackPanel>
             <TextBox Name="txtEmail" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">

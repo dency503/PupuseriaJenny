@@ -80,6 +80,33 @@ namespace DataLayer
             }
             return Resultado;
         }
+        public static DataTable CATEGORIAS(int pagina, int tamanoPagina)
+        {
+            DataTable Resultado = new DataTable();
+            string Consulta = @"SELECT * FROM categorias ORDER BY Categoria Asc
+    LIMIT @offset, @limit;"; // Para SQL Server
+
+            // Crear un diccionario para los parámetros
+            var parametros = new Dictionary<string, object>
+    {
+        { "@offset", (pagina - 1) * tamanoPagina },
+        { "@limit", tamanoPagina }
+    };
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Ejecutar la consulta con los parámetros
+                Resultado = operacion.Consultar(Consulta, parametros);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener roles: " + ex.Message);
+                // Manejo adicional de errores puede ser implementado aquí
+            }
+
+            return Resultado; // Devuelve el DataTable con los resultados
+        }
         public static DataTable PedidosVentas(string inicio, string final)
         {
             DataTable Resultado = new DataTable();
@@ -241,25 +268,22 @@ namespace DataLayer
         public static DataTable PRODUCTOS()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT
-                p.IDProducto, 
-                p.Nombre,
-                p.Precio, 
-                p.CostoUnitario,
-                p.EsPlatillo, 
-                p.IDCategoria, 
-                p.Cantidad,
-                c.Nombre AS NombreC,
-                CASE
-                    WHEN p.EsPlatillo = 1 THEN 'Sí'
-                    ELSE 'No'
-                END AS SinStock
-            FROM
-                productos p
-                INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
-            ORDER BY
-                p.Nombre ASC;
-             ";
+            String Consulta = @"
+    SELECT
+        p.idProducto, 
+        p.nombreProducto AS Nombre,
+        p.precio, 
+        p.costoUnitario,
+        p.cantidadProducto AS Cantidad,
+        c.nombre AS NombreC,
+        pr.nombreProveedor AS NombreProveedor
+    FROM
+        Productos p
+        INNER JOIN Categorias c ON p.idCategoria = c.idCategoria
+        LEFT JOIN Proveedores pr ON p.idProveedor = pr.idProveedor
+    ORDER BY
+        p.nombreProducto ASC;
+    ";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -271,25 +295,29 @@ namespace DataLayer
             }
             return Resultado;
         }
-        public static DataTable USUARIOS(int pagina, int tamanoPagina)
+        public static DataTable PRODUCTOS(int pagina, int tamanoPagina)
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"
-        SELECT 
-            u.IDUsuario, 
-            u.Usuario, 
-            u.Contraseña AS Contrasena, 
-            u.IDEmpleado, 
-            u.IDRol, 
-            r.Rol AS Rol,
-            e.Nombre AS Empleado
-        FROM 
-            usuarios u
-            INNER JOIN roles r ON u.IDRol = r.IDRol
-            INNER JOIN empleados e ON u.IDEmpleado = e.IDEmpleado
-        ORDER BY 
-            u.Usuario ASC
-        LIMIT @offset, @limit;"; // Agregar LIMIT para la paginación
+        SELECT
+    p.idProducto, 
+    p.nombreProducto,
+    p.precio, 
+    p.costoUnitario,
+    p.cantidadProducto,
+    c.idCategoria,
+    c.categoria,
+     pr.proveedor,
+pr.idProveedor
+     FROM
+    Productos p
+    INNER JOIN Categorias c ON p.idCategoria = c.idCategoria
+    LEFT JOIN Proveedores pr ON p.idProveedor = pr.idProveedor
+ORDER BY
+    p.nombreProducto ASC
+
+LIMIT @offset, @limit;
+    "; // Agregar LIMIT para la paginación
 
             // Crear un diccionario para los parámetros
             var parametros = new Dictionary<string, object>
@@ -311,6 +339,48 @@ namespace DataLayer
 
             return Resultado;
         }
+        public static DataTable USUARIOS(int pagina, int tamanoPagina)
+        {
+            DataTable resultado = new DataTable();
+            string consulta = @"
+        SELECT 
+    u.IDUsuario, 
+    u.Usuario, 
+    u.Contrasenia, 
+    u.idEmpleado, 
+    u.IDRol, 
+    r.Rol AS Rol,
+    e.nombresEmpleado AS Empleado
+FROM 
+    usuario u
+    INNER JOIN roles r ON u.IDRol = r.IDRol
+    INNER JOIN empleados e ON u.idEmpleado = e.idEmpleados
+ORDER BY 
+    u.Usuario ASC
+        LIMIT @limit OFFSET @offset;"; // Cambiar el orden de OFFSET y LIMIT
+
+            // Crear un diccionario para los parámetros
+            var parametros = new Dictionary<string, object>
+    {
+        { "@offset", (pagina - 1) * tamanoPagina }, // Cálculo de desplazamiento
+        { "@limit", tamanoPagina } // Tamaño de la página
+    };
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Usar el método Consultar con parámetros
+                resultado = operacion.Consultar(consulta, parametros);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en la consulta: " + ex.Message);
+                // Podrías lanzar la excepción o manejarla de otra forma, según lo que necesites
+            }
+
+            return resultado;
+        }
+
         public static DataTable Permisos(int pagina, int tamanoPagina)
         {
             DataTable Resultado = new DataTable();
@@ -813,6 +883,28 @@ namespace DataLayer
             }
             return resultado;
         }
+        public static int ContarProductos()
+        {
+            int totalUsuarios = 0;
+            string consulta = "SELECT COUNT(*) FROM Productos"; // Cambia 'usuarios' al nombre real de tu tabla
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Ejecutar la consulta y obtener el resultado
+                DataTable resultado = operacion.Consultar(consulta);
+                if (resultado.Rows.Count > 0)
+                {
+                    totalUsuarios = Convert.ToInt32(resultado.Rows[0][0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Maneja la excepción si es necesario
+                Console.WriteLine("Error al contar usuarios: " + ex.Message);
+            }
+            return totalUsuarios;
+        }
         public static int ContarPermisos()
         {
             int totalUsuarios = 0;
@@ -884,6 +976,28 @@ namespace DataLayer
         {
             int totalUsuarios = 0;
             string consulta = "SELECT COUNT(*) FROM Empleados"; // Cambia 'usuarios' al nombre real de tu tabla
+
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                // Ejecutar la consulta y obtener el resultado
+                DataTable resultado = operacion.Consultar(consulta);
+                if (resultado.Rows.Count > 0)
+                {
+                    totalUsuarios = Convert.ToInt32(resultado.Rows[0][0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Maneja la excepción si es necesario
+                Console.WriteLine("Error al contar usuarios: " + ex.Message);
+            }
+            return totalUsuarios;
+        }
+        public static int ContarCategorias()
+        {
+            int totalUsuarios = 0;
+            string consulta = "SELECT COUNT(*) FROM Categorias"; // Cambia 'usuarios' al nombre real de tu tabla
 
             DBOperacion operacion = new DBOperacion();
             try

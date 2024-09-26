@@ -57,7 +57,7 @@ namespace Accesos.GUI
                 {
 
                     CLS.Roles oUsuario = new CLS.Roles();
-                    oUsuario.IDRol  = Convert.ToInt32(rol.IDRol);
+                    oUsuario.IDRol = Convert.ToInt32(rol.IDRol);
                     if (oUsuario.Eliminar())
                     {
                         Items.Remove(rol); // Eliminar de la colección ObservableCollection

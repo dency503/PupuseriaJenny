@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using Accesos.CLS;
 
 namespace Accesos.GUI
@@ -15,7 +14,7 @@ namespace Accesos.GUI
         public LXSER()
         {
             InitializeComponent();
-           
+
             CargarDatosHelper.CargarEmpleados(_paginaActual, _tamanoPagina
                  , usersDataGrid);
 

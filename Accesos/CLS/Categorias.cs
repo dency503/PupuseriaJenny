@@ -1,63 +1,26 @@
-﻿using System.Text;
-using DataLayer;
+﻿using DataLayer;
+using System;
+using System.Text;
 
 namespace Accesos.CLS
 {
-    public class Permisos
+    public class Categorias
     {
+        Int32 _IDCategoria;
+        string _Categoria;
 
-        Int32 _IDPermiso;
-        Int32 _IDRol;
-        Int32 _IDOpcion;
+        // Propiedades
+        public int IDCategoria { get => _IDCategoria; set => _IDCategoria = value; }
+        public string Categoria { get => _Categoria; set => _Categoria = value; }
 
-        public int IDPermiso { get => _IDPermiso; set => _IDPermiso = value; }
-        public int IDRol { get => _IDRol; set => _IDRol = value; }
-        public int IDOpcion { get => _IDOpcion; set => _IDOpcion = value; }
-
+        // Método para insertar una nueva categoría
         public Boolean Insertar()
         {
             Boolean Resultado = false;
             DBOperacion Operacion = new DBOperacion();
-            StringBuilder Sentencia;
-
-            try
-            {
-
-                Sentencia = new StringBuilder();
-                Sentencia.Append("INSERT INTO permisos (IDRol, IDOpcion) VALUES(");
-                Sentencia.Append("'" + IDRol + "','" + _IDOpcion + "');");
-
-                if (Operacion.EjecutarSentencia(Sentencia.ToString()) > 0)
-                {
-                    Resultado = true;
-                }
-                else
-                {
-                    Resultado = false;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                // Manejar la excepción según sea necesario (por ejemplo, loguear el error)
-                throw new Exception("Error al insertar permisos: " + ex.Message);
-            }
-
-            return Resultado;
-        }
-
-
-        public Boolean Actualizar()
-        {
-            Boolean Resultado = false;
-            DBOperacion Operacion = new DBOperacion();
             StringBuilder Sentencia = new StringBuilder();
-
-            Sentencia.Append("UPDATE permisos SET ");
-            Sentencia.Append("IDRol = '" + _IDRol + "'," +
-                             "IDOpcion = '" + _IDOpcion + "' ");
-            Sentencia.Append("WHERE IDPermiso = " + _IDPermiso + "; ");
+            Sentencia.Append("INSERT INTO categorias(categoria) VALUES(");
+            Sentencia.Append("'" + Categoria + "');");
             try
             {
                 if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)
@@ -73,20 +36,44 @@ namespace Accesos.CLS
             {
                 Resultado = false;
             }
-
-
-
-
             return Resultado;
         }
 
+        // Método para actualizar una categoría existente
+        public Boolean Actualizar()
+        {
+            Boolean Resultado = false;
+            DBOperacion Operacion = new DBOperacion();
+            StringBuilder Sentencia = new StringBuilder();
+            Sentencia.Append("UPDATE categorias SET ");
+            Sentencia.Append("categoria = '" + Categoria + "' ");
+            Sentencia.Append("WHERE idCategoria = " + IDCategoria + ";");
+            try
+            {
+                if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)
+                {
+                    Resultado = true;
+                }
+                else
+                {
+                    Resultado = false;
+                }
+            }
+            catch (Exception)
+            {
+                Resultado = false;
+            }
+            return Resultado;
+        }
+
+        // Método para eliminar una categoría
         public Boolean Eliminar()
         {
             Boolean Resultado = false;
             DBOperacion Operacion = new DBOperacion();
             StringBuilder Sentencia = new StringBuilder();
-            Sentencia.Append("DELETE FROM permisos ");
-            Sentencia.Append("WHERE IDPermiso = " + IDPermiso + ";");
+            Sentencia.Append("DELETE FROM categorias ");
+            Sentencia.Append("WHERE idCategoria = " + IDCategoria + ";");
             try
             {
                 if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)

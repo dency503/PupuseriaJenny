@@ -8,13 +8,13 @@ namespace Accesos.GUI
     /// <summary>
     /// Lógica de interacción para EmpleadoTab.xaml
     /// </summary>
-    public partial class EmpleadoTab : UserControl,ITab
+    public partial class EmpleadoTab : UserControl, ITab
     {
         public ObservableCollection<Empleados> Items { get; set; } = new ObservableCollection<Empleados>();
         public int TotalRegistros { get; set; }
         private int _paginaActual = 1;
         private const int _tamanoPagina = 10;
-        
+
         public EmpleadoTab()
         {
             InitializeComponent();
@@ -92,7 +92,7 @@ namespace Accesos.GUI
                 },
                 usersDataGrid
             );
-            
+
             TotalRegistros = cargarRoles.TotalRegistros;
             Items = cargarRoles.Items;
         }

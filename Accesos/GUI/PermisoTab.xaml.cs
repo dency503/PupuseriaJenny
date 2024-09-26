@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Accesos.CLS;
 
 namespace Accesos.GUI
@@ -28,10 +16,56 @@ namespace Accesos.GUI
         private const int _tamanoPagina = 10;
         int TotalPaginas;
         public int TotalRegistros { get; set; }
-    
+
         public PermisoTab()
         {
             InitializeComponent();
+        }
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var opciones = button.DataContext as Permisos;
+
+            if (opciones != null)
+            {
+                EditarPermisoWindow editarPermisoWindow = new EditarPermisoWindow();
+                editarPermisoWindow.txtIDPermiso.Text = opciones.IDPermiso.ToString();
+                editarPermisoWindow.cmbOpcion.SelectedValue = opciones.IDOpcion.ToString();
+                editarPermisoWindow.cmbRol.SelectedValue = opciones.IDRol.ToString();
+
+                editarPermisoWindow.ShowDialog();
+
+                CargarDatos();
+                // Aquí puedes abrir una ventana de edición o realizar otras acciones
+            }
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var permiso = button.DataContext as Permisos;
+
+            if (permiso != null)
+            {
+                // Confirmar eliminación
+                MessageBoxResult result = MessageBox.Show($"¿Estás seguro de que deseas eliminar a {permiso.IDPermiso}?", "Confirmar eliminación", MessageBoxButton.YesNo);
+
+                if (result == MessageBoxResult.Yes)
+                {
+
+                    CLS.Permisos oPermiso = new CLS.Permisos();
+                    oPermiso.IDPermiso = Convert.ToInt32(permiso.IDPermiso);
+                    if (oPermiso.Eliminar())
+                    {
+                        Items.Remove(permiso); // Eliminar de la colección ObservableCollection
+                        MessageBox.Show($"Usuario {permiso.IDPermiso} eliminado.");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Error al eliminar el usuario {permiso.IDPermiso}.");
+                    }
+                }
+            }
         }
         private void CargarDatos()
         {
@@ -51,7 +85,7 @@ namespace Accesos.GUI
                         {
                             IDOpcion = Convert.ToInt32(row["IDOpcion"]),
                             IDPermiso = Convert.ToInt32(row["IDPermiso"])
-                            
+
 
                         });
 
