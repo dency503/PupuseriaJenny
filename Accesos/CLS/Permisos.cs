@@ -9,10 +9,24 @@ namespace Accesos.CLS
         Int32 _IDPermiso;
         Int32 _IDRol;
         Int32 _IDOpcion;
+        String _NombreRol;
+        String _NombreOpcion;
+       public string NombreRol
+        {
+            get => _NombreRol;
+            set
+            {
+                _NombreRol = value;
+               
+            }
+        }
+
+
 
         public int IDPermiso { get => _IDPermiso; set => _IDPermiso = value; }
         public int IDRol { get => _IDRol; set => _IDRol = value; }
         public int IDOpcion { get => _IDOpcion; set => _IDOpcion = value; }
+        public string NombreOpcion { get => _NombreOpcion; set => _NombreOpcion = value; }
 
         public Boolean Insertar()
         {

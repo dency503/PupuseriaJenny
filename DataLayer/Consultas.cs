@@ -180,9 +180,22 @@ namespace DataLayer
         public static DataTable Empleados(int pagina, int tamanoPagina)
         {
             DataTable Resultado = new DataTable();
-            string Consulta = @"
-    SELECT * FROM empleados
-    ORDER BY nombre ASC
+            string Consulta = @"SELECT 
+    E.idEmpleados,
+E.nombresEmpleado,
+E.apellidosEmpleado,
+    E.telefono,
+    E.direccion,
+    E.email,
+    E.fechaNacimiento,
+    C.cargo AS Cargo,
+    E.idCargo
+FROM 
+    Empleados E
+JOIN 
+    Cargos C ON E.idCargo = C.idCargo
+    
+    ORDER BY nombresEmpleado ASC
     LIMIT @offset, @limit;"; // Para SQL Server
 
             // Crear un diccionario para los parámetros
@@ -385,12 +398,13 @@ ORDER BY
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"
-        SELECT 
-            *
-        FROM 
-            Permisos
+        SELECT * FROM permisos P
+INNER JOIN 
+    Roles r ON P.idRol = r.idRol
+INNER JOIN 
+Opciones o ON P.idOpcion = o.idOpcion
         ORDER BY 
-            Rol
+            r.Rol
         LIMIT @offset, @limit;"; // Agregar LIMIT para la paginación
 
             // Crear un diccionario para los parámetros

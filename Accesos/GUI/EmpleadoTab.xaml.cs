@@ -88,6 +88,7 @@ namespace Accesos.GUI
                         idCargo = Convert.ToInt32(row["idCargo"].ToString())
 
                     });
+                    
 
                 },
                 usersDataGrid

@@ -26,14 +26,14 @@
                                     <TextBlock Text="{Binding Character}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
 
                                 </Border>
-                                <TextBlock Text="{Binding Rol}" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding NombreRol}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
 
-                <DataGridTextColumn Header="Opcion" IsReadOnly="True" Width="*" Binding="{Binding Opcion}"/>
+                <DataGridTextColumn Header="Opcion" IsReadOnly="True" Width="*" Binding="{Binding NombreOpcion}"/>
           
                 <DataGridTemplateColumn Header="Acciones" IsReadOnly="True" Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>

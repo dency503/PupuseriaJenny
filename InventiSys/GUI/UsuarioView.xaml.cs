@@ -43,5 +43,10 @@ namespace InventiSys.GUI
         {
             MainContentControl.Content = new ProductosView();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainContentControl.Content = new CategoriasView();
+        }
     }
 }

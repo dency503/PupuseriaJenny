@@ -1,47 +1,54 @@
 ﻿<UserControl x:Class="Accesos.GUI.EmpleadoTab"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Accesos.GUI"
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"  Grid.Row="5" x:Name="usersDataGrid" >
-            <DataGrid.Columns >
-                <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{DynamicResource CheckBoxStyle1}" >
+        <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="5" x:Name="usersDataGrid">
+            <DataGrid.Columns>
+                <!-- Checkbox para seleccionar empleados -->
+                <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{DynamicResource CheckBoxStyle1}">
                     <DataGridCheckBoxColumn.HeaderTemplate>
                         <DataTemplate>
                             <CheckBox/>
                         </DataTemplate>
                     </DataGridCheckBoxColumn.HeaderTemplate>
                 </DataGridCheckBoxColumn>
-                <DataGridTextColumn Header="#" CanUserResize="False" IsReadOnly="True" Width="auto" Binding="{Binding  IDEmpleado}"/>
-                <DataGridTemplateColumn Header="Usuarios" IsReadOnly="True" Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Border Height="25" Width="25" CornerRadius="50" Margin="0 0 10 0" Background="{Binding BgColor}">
-                                    <TextBlock Text="{Binding Character}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
 
-                                </Border>
-                                <TextBlock Text="{Binding Nombre}" VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <!-- Columna para el ID del empleado -->
+                <DataGridTextColumn Header="ID" CanUserResize="False" IsReadOnly="True" Width="auto" Binding="{Binding idEmpleados}"/>
 
+                <!-- Nombre Completo (combinación de nombre y apellidos) -->
+                <DataGridTextColumn Header="Nombre" CanUserResize="False" IsReadOnly="True" Width="auto" Binding="{Binding nombresEmpleado}"/>
 
-                <DataGridTextColumn Header="Cargo" IsReadOnly="True" Width="*" Binding="{Binding Cargo}"/>
+                <DataGridTextColumn Header="Apellidos" CanUserResize="False" IsReadOnly="True" Width="auto" Binding="{Binding apellidosEmpleado}"/>
+                <!-- Teléfono -->
+                <DataGridTextColumn Header="Teléfono" IsReadOnly="True" Width="*" Binding="{Binding telefono}"/>
+
+                <!-- Dirección -->
+                <DataGridTextColumn Header="Dirección" IsReadOnly="True" Width="*" Binding="{Binding direccion}"/>
+
+                <!-- Email -->
+                <DataGridTextColumn Header="Email" IsReadOnly="True" Width="*" Binding="{Binding email}"/>
+
+                <!-- Fecha de Nacimiento -->
+                <DataGridTextColumn Header="Fecha de Nacimiento" IsReadOnly="True" Width="*" Binding="{Binding fechaNacimiento, StringFormat={}{0:dd/MM/yyyy}}"/>
+
+       
+
+                <!-- Acciones (Editar y Eliminar) -->
                 <DataGridTemplateColumn Header="Acciones" IsReadOnly="True" Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource gridEditButton}" Click="EditButton_Click" >
+                                <Button Style="{StaticResource gridEditButton}" Click="EditButton_Click">
                                     <Icon:PackIconMaterial Kind="PencilOutline"/>
                                 </Button>
-                                <Button Style="{StaticResource gridRemoveButton}" Margin="5 0 0 0" Click="RemoveButton_Click" >
+                                <Button Style="{StaticResource gridRemoveButton}" Margin="5 0 0 0" Click="RemoveButton_Click">
                                     <Icon:PackIconMaterial Kind="DeleteOutline"/>
                                 </Button>
                                 <TextBlock/>
@@ -49,9 +56,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </UserControl>

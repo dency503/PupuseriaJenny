@@ -80,7 +80,9 @@ namespace Accesos.GUI
                         {
                             IDCategoria = Convert.ToInt32(row["IDCategoria"]),
                             Categoria = row["Categoria"].ToString()
+
                         });
+                      
                     },
                     categoriasDataGrid
                 );

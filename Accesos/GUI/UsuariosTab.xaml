@@ -33,7 +33,7 @@
                 </DataGridTemplateColumn>
                
              
-                <DataGridTextColumn Header="Contraseña" IsReadOnly="True" Width="*" Binding="{Binding Contrasenia}"/>
+                <DataGridTextColumn Header="Contraseña" IsReadOnly="True" Width="*" Binding="{Binding Contraseña}"/>
                 <DataGridTextColumn Header="Empleado" IsReadOnly="True" Width="*" Binding="{Binding Empleado}"/>
                 <DataGridTemplateColumn Header="Acciones" IsReadOnly="True" Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>

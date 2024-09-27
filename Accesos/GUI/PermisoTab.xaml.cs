@@ -20,6 +20,7 @@ namespace Accesos.GUI
         public PermisoTab()
         {
             InitializeComponent();
+            CargarDatos();
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
@@ -85,6 +86,8 @@ namespace Accesos.GUI
                         {
                             IDOpcion = Convert.ToInt32(row["IDOpcion"]),
                             IDPermiso = Convert.ToInt32(row["IDPermiso"])
+                            ,NombreRol = row["Rol"].ToString(),
+                            NombreOpcion = row["Opcion"].ToString()
 
 
                         });

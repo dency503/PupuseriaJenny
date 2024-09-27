@@ -64,9 +64,9 @@
                                         <TextBlock Text="Productos"/>
                                     </StackPanel>
                                 </Button>
-                                <Button Style="{StaticResource menuButton}">
+                                <Button Style="{StaticResource menuButton}" Click="Button_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Tag" Style="{StaticResource menuButtonIcon}"/>
+                                        <Icon:PackIconMaterial Kind="Tag" Style="{StaticResource menuButtonIcon}" Name="Categorias"/>
                                         <TextBlock Text="Categorias"/>
                                     </StackPanel>
                                 </Button>
