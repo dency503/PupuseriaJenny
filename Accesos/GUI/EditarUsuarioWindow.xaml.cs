@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Windows;
 using DataLayer;
 
@@ -9,36 +10,10 @@ namespace Accesos.GUI
     /// </summary>
     public partial class EditarUsuarioWindow : Window
     {
-        SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
-        private Boolean _RegistroExitoso = false;
-        public bool RegistroExitoso { get => _RegistroExitoso; private set => _RegistroExitoso = value; }
+        
+        private bool _registroExitoso = false;
+        public bool RegistroExitoso { get => _registroExitoso; private set => _registroExitoso = value; }
 
-        private int _paginaActual = 1;
-        private const int _tamanoPagina = 10;
-        int totalPaginas;
-        private Boolean Validar()
-        {
-            Boolean valido = true;
-            try
-            {
-                if (txtUsuario.Text.Trim().Length == 0)
-                {
-                    // Notificador.SetError(tbUsuario, "Este campo no puede estar vacío");
-                    valido = false;
-                }
-                if (txtContraseña.Password.Trim().Length == 0)
-                {
-                    //  Notificador.SetError(tbContraseña, "Este campo no puede estar vacío");
-                    valido = false;
-                }
-
-            }
-            catch (Exception)
-            {
-                valido = false;
-            }
-            return valido;
-        }
         public EditarUsuarioWindow()
         {
             InitializeComponent();
@@ -49,19 +24,41 @@ namespace Accesos.GUI
         {
             this.Close();
         }
+
         private void Cargar()
         {
             // Cargar el ComboBox de Empleados
             DataTable empleados = Consultas.Empleados();
-            cmbEmpleado.ItemsSource = empleados.DefaultView; // Establece el ItemsSource al DataView del DataTable
-            cmbEmpleado.DisplayMemberPath = "Nombre"; // Nombre del empleado que se mostrará
-            cmbEmpleado.SelectedValuePath = "IDEmpleado"; // IDEmpleado será el valor seleccionado
+            cmbEmpleado.ItemsSource = empleados.DefaultView;
+            cmbEmpleado.DisplayMemberPath = "nombresEmpleado";
+            cmbEmpleado.SelectedValuePath = "idEmpleados";
 
             // Cargar el ComboBox de Roles
             DataTable roles = Consultas.ROLES();
-            cmbRol.ItemsSource = roles.DefaultView; // Establece el ItemsSource al DataView del DataTable
-            cmbRol.DisplayMemberPath = "Rol"; // Rol que se mostrará
-            cmbRol.SelectedValuePath = "IDRol"; // IDRol será el valor seleccionado
+            cmbRol.ItemsSource = roles.DefaultView;
+            cmbRol.DisplayMemberPath = "rol";
+            cmbRol.SelectedValuePath = "idRol";
+        }
+
+        private bool Validar()
+        {
+            bool valido = true;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+                {
+                    // Notificador.SetError(tbUsuario, "Este campo no puede estar vacío");
+                    MessageBox.Show("El campo Usuario no puede estar vacío.");
+                    valido = false;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la validación: " + ex.Message);
+                valido = false;
+            }
+            return valido;
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
@@ -70,42 +67,36 @@ namespace Accesos.GUI
             {
                 if (Validar())
                 {
-                    // CREAR UN OBJETO A PARTIR DE LA CLASE ENTIDAD
+                    // Crear un objeto a partir de la clase entidad
                     CLS.Usuarios oUsuario = new CLS.Usuarios();
-                    // SINCRONIZAMOS EL OBJETO CON LA GUI
-                    try
-                    {
-                        oUsuario.IDUsuario = Convert.ToInt32(txtIDUsuario.Text);
-                    }
-                    catch (Exception)
-                    {
-                        //Console.WriteLine("No se puedo convertir ");
-                        oUsuario.IDUsuario = 0;
-                    }
 
+                    // Sincronizamos el objeto con la GUI
+                    oUsuario.IDUsuario = string.IsNullOrWhiteSpace(txtIDUsuario.Text) ? 0 : Convert.ToInt32(txtIDUsuario.Text);
                     oUsuario.Usuario = txtUsuario.Text;
                     oUsuario.Contraseña = txtContraseña.Password;
                     oUsuario.IDEmpleado = Convert.ToInt32(cmbEmpleado.SelectedValue);
                     oUsuario.IDRol = Convert.ToInt32(cmbRol.SelectedValue);
-                    //PROCEDER
-                    if (txtIDUsuario.Text.Trim().Length == 0)
+                   
+
+                    // Proceder según si es un nuevo registro o una actualización
+                    if (oUsuario.IDUsuario == 0)
                     {
-                        //GUARDAR NUEVO REGISTRO
+                        // Guardar nuevo registro
                         if (oUsuario.Insertar())
                         {
-                            MessageBox.Show("Resgistro realizado con éxito");
-                            _RegistroExitoso = true;
+                            MessageBox.Show("Registro realizado con éxito");
+                            _registroExitoso = true;
                             Close();
                         }
                         else
                         {
                             MessageBox.Show("No se pudo registrar el Usuario");
-                            _RegistroExitoso = false;
+                            _registroExitoso = false;
                         }
                     }
                     else
                     {
-                        // ACTUALIZAR NUEVO REGISTRO
+                        // Actualizar registro existente
                         if (oUsuario.Actualizar())
                         {
                             MessageBox.Show("Registro actualizado");
@@ -120,10 +111,8 @@ namespace Accesos.GUI
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al guardar: " + ex.Message);
             }
         }
     }
-
 }

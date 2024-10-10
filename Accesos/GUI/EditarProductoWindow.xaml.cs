@@ -63,14 +63,14 @@ namespace Accesos.GUI
             // Cargar el ComboBox de Categorías
             DataTable categorias = Consultas.CATEGORIAS(); // Asegúrate de tener esta consulta
             cmbCategoria.ItemsSource = categorias.DefaultView; // Establece el ItemsSource al DataView del DataTable
-            cmbCategoria.DisplayMemberPath = "NombreCategoria"; // Nombre de la categoría que se mostrará
-            cmbCategoria.SelectedValuePath = "IDCategoria"; // IDCategoria será el valor seleccionado
+            cmbCategoria.DisplayMemberPath = "categoria"; // Nombre de la categoría que se mostrará
+            cmbCategoria.SelectedValuePath = "idCategoria"; // IDCategoria será el valor seleccionado
 
             // Cargar el ComboBox de Proveedores
             DataTable proveedores = Consultas.PROVEEDORES(); // Asegúrate de tener esta consulta
             cmbProveedor.ItemsSource = proveedores.DefaultView; // Establece el ItemsSource al DataView del DataTable
-            cmbProveedor.DisplayMemberPath = "NombreProveedor"; // Nombre del proveedor que se mostrará
-            cmbProveedor.SelectedValuePath = "IDProveedor"; // IDProveedor será el valor seleccionado
+            cmbProveedor.DisplayMemberPath = "proveedor"; // Nombre del proveedor que se mostrará
+            cmbProveedor.SelectedValuePath = "idProveedor"; // IDProveedor será el valor seleccionado
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)

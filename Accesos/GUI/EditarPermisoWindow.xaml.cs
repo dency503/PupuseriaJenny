@@ -14,13 +14,14 @@ namespace Accesos.GUI
         public EditarPermisoWindow()
         {
             InitializeComponent();
+            CargarDatos();
         }
         private void CargarDatos()
         {
             DataTable roles = Consultas.ROLES();
             cmbRol.ItemsSource = roles.DefaultView; // Establece el ItemsSource al DataView del DataTable
-            cmbRol.DisplayMemberPath = "Rol"; // Rol que se mostrará
-            cmbRol.SelectedValuePath = "IDRol"; // IDRol será el valor seleccionado
+            cmbRol.DisplayMemberPath = "rol"; // Rol que se mostrará
+            cmbRol.SelectedValuePath = "idRol"; // IDRol será el valor seleccionado
         }
 
         private void CancelarButton_Click(object sender, RoutedEventArgs e)

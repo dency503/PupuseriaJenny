@@ -5,6 +5,22 @@ namespace DataLayer
 {
     public static class Consultas
     {
+        public static DataTable Cargos ()
+     
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT * FROM Cargos ORDER BY cargo ASC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
         public static DataTable PedidosCompras(int id)
         {
             DataTable Resultado = new DataTable();
@@ -68,7 +84,7 @@ namespace DataLayer
         public static DataTable CATEGORIAS()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM categorias ORDER BY Nombre ASC;";
+            String Consulta = @"SELECT * FROM categorias ORDER BY categoria ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -150,7 +166,7 @@ namespace DataLayer
         public static DataTable PROVEEDORES()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM proveedores ORDER BY Nombre ASC;";
+            String Consulta = @"SELECT * FROM proveedores ORDER BY proveedor ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -165,15 +181,15 @@ namespace DataLayer
         public static DataTable Empleados()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM empleados ORDER BY Nombre ASC;";
+            String Consulta = @"SELECT * FROM Empleados ORDER BY nombresEmpleado ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
                 Resultado = operacion.Consultar(Consulta);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
             return Resultado;
         }
@@ -222,18 +238,19 @@ JOIN
         public static DataTable ROLES()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM roles ORDER BY Rol ASC;";
+            String Consulta = @"SELECT * FROM Roles ORDER BY rol ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
                 Resultado = operacion.Consultar(Consulta);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
             return Resultado;
         }
+
         public static DataTable Usuarios()
         {
             DataTable Resultado = new DataTable();
@@ -945,7 +962,7 @@ Opciones o ON P.idOpcion = o.idOpcion
         public static int ContarUsuarios()
         {
             int totalUsuarios = 0;
-            string consulta = "SELECT COUNT(*) FROM usuarios"; // Cambia 'usuarios' al nombre real de tu tabla
+            string consulta = "SELECT COUNT(*) FROM usuario"; // Cambia 'usuarios' al nombre real de tu tabla
 
             DBOperacion operacion = new DBOperacion();
             try

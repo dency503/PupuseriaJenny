@@ -91,7 +91,7 @@ namespace Accesos.GUI
                             IDCategoria = Convert.ToInt32(row["idCategoria"]), // Asegúrate de que el nombre de la columna sea correcto
                             IDProveedor = Convert.ToInt32(row["idProveedor"]) // Manejo de valores nulos
                         });
-                        MessageBox.Show(row["nombreProducto"].ToString());
+                       
                     },
                     usersDataGrid
                 );

@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System.Data;
+using System.Windows;
 using Accesos.CLS;
+using DataLayer;
 
 namespace Accesos.GUI
 {
@@ -11,6 +13,11 @@ namespace Accesos.GUI
         public EditarEmpleadoWindow()
         {
             InitializeComponent();
+            DataTable cargos = Consultas.Cargos();
+            cmbCargo.ItemsSource = cargos.DefaultView;
+            cmbCargo.DisplayMemberPath = "cargo";
+            cmbCargo.SelectedValuePath = "idCargo";
+           
         }
         private Boolean Validar()
         {
@@ -36,26 +43,20 @@ namespace Accesos.GUI
             {
                 if (Validar())
                 {
-                    // Crear un objeto de la clase Empleados
-                    Empleados oEmpleado = new Empleados();
-
-                    try
+                    Empleados oEmpleado = new Empleados
                     {
-                        oEmpleado.idEmpleados = Convert.ToInt32(txtIDEmpleado.Text);
-                    }
-                    catch (Exception)
-                    {
-                        oEmpleado.idEmpleados = 0;
-                    }
+                        idEmpleados = string.IsNullOrWhiteSpace(txtIDEmpleado.Text) ? 0 : Convert.ToInt32(txtIDEmpleado.Text),
+                        nombresEmpleado = txtNombre.Text,
+                        apellidosEmpleado = txtApellido.Text,
+                        idCargo = Convert.ToInt32(cmbCargo.SelectedValue), // Asumiendo que el ComboBox está vinculado adecuadamente
+                        telefono = txtTelefono.Text,
+                        email = txtEmail.Text,
+                        direccion = txtDireccion.Text,
+                        fechaNacimiento = dpFechaNacimiento.SelectedDate.Value // Asegúrate de manejar el caso en que no haya una fecha seleccionada
+                    };
 
-                    oEmpleado.nombresEmpleado = txtNombre.Text;
-                    oEmpleado.idCargo = Convert.ToInt32(txtCargo.Text);
-                    oEmpleado.telefono = txtTelefono.Text;
-                    oEmpleado.email = txtEmail.Text;
-
-                    if (txtIDEmpleado.Text.Trim().Length == 0)
+                    if (oEmpleado.idEmpleados == 0) // Nuevo registro
                     {
-                        // Guardar un nuevo registro
                         if (oEmpleado.Insertar())
                         {
                             MessageBox.Show("Registro guardado");
@@ -66,9 +67,8 @@ namespace Accesos.GUI
                             MessageBox.Show("El registro no pudo ser almacenado");
                         }
                     }
-                    else
+                    else // Actualizar registro existente
                     {
-                        // Actualizar un registro existente
                         if (oEmpleado.Actualizar())
                         {
                             MessageBox.Show("Registro actualizado");
@@ -81,15 +81,15 @@ namespace Accesos.GUI
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Manejar la excepción apropiadamente
+                MessageBox.Show($"Ocurrió un error: {ex.Message}");
             }
         }
 
         private void CancelarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

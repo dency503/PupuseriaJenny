@@ -1,5 +1,8 @@
-﻿using System.Text;
-using DataLayer; // Assuming you have a DataLayer namespace with DBOperacion class
+﻿using System;
+using System.Collections.Generic; // Para usar el diccionario
+using System.Data.SqlClient; // Asegúrate de tener la referencia adecuada
+using System.Text;
+using DataLayer; // Asumiendo que tienes un espacio de nombres DataLayer con la clase DBOperacion
 
 namespace Accesos.CLS
 {
@@ -19,17 +22,24 @@ namespace Accesos.CLS
             bool resultado = false;
             DBOperacion operacion = new DBOperacion();
             StringBuilder sentencia = new StringBuilder();
-            sentencia.Append("INSERT INTO Empleados(nombresEmpleado, apellidosEmpleado, telefono, direccion, email, fechaNacimiento, idCargo) VALUES(");
-            sentencia.Append("'" + nombresEmpleado + "', '" + apellidosEmpleado + "', '" + telefono + "', '" + direccion + "', '" + email + "', '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', " + idCargo + ");");
+            sentencia.Append("INSERT INTO Empleados(nombresEmpleado, apellidosEmpleado, telefono, direccion, email, fechaNacimiento, idCargo) VALUES(@nombresEmpleado, @apellidosEmpleado, @telefono, @direccion, @email, @fechaNacimiento, @idCargo);");
+
             try
             {
-                if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
+                var parametros = new Dictionary<string, object>
+                {
+                    { "@nombresEmpleado", nombresEmpleado },
+                    { "@apellidosEmpleado", apellidosEmpleado },
+                    { "@telefono", telefono },
+                    { "@direccion", direccion },
+                    { "@email", email },
+                    { "@fechaNacimiento", fechaNacimiento.ToString("yyyy-MM-dd") },
+                    { "@idCargo", idCargo }
+                };
+
+                if (operacion.EjecutarSentencia(sentencia.ToString(), parametros) >= 0)
                 {
                     resultado = true;
-                }
-                else
-                {
-                    resultado = false;
                 }
             }
             catch (Exception)
@@ -45,23 +55,32 @@ namespace Accesos.CLS
             DBOperacion operacion = new DBOperacion();
             StringBuilder sentencia = new StringBuilder();
             sentencia.Append("UPDATE Empleados SET ");
-            sentencia.Append("nombresEmpleado = '" + nombresEmpleado + "', " +
-                             "apellidosEmpleado = '" + apellidosEmpleado + "', " +
-                             "telefono = '" + telefono + "', " +
-                             "direccion = '" + direccion + "', " +
-                             "email = '" + email + "', " +
-                             "fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', " +
-                             "idCargo = " + idCargo);
-            sentencia.Append(" WHERE idEmpleados = " + idEmpleados + ";");
+            sentencia.Append("nombresEmpleado = @nombresEmpleado, " +
+                             "apellidosEmpleado = @apellidosEmpleado, " +
+                             "telefono = @telefono, " +
+                             "direccion = @direccion, " +
+                             "email = @email, " +
+                             "fechaNacimiento = @fechaNacimiento, " +
+                             "idCargo = @idCargo ");
+            sentencia.Append("WHERE idEmpleados = @idEmpleados;");
+
             try
             {
-                if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
+                var parametros = new Dictionary<string, object>
+                {
+                    { "@nombresEmpleado", nombresEmpleado },
+                    { "@apellidosEmpleado", apellidosEmpleado },
+                    { "@telefono", telefono },
+                    { "@direccion", direccion },
+                    { "@email", email },
+                    { "@fechaNacimiento", fechaNacimiento.ToString("yyyy-MM-dd") },
+                    { "@idCargo", idCargo },
+                    { "@idEmpleados", idEmpleados }
+                };
+
+                if (operacion.EjecutarSentencia(sentencia.ToString(), parametros) >= 0)
                 {
                     resultado = true;
-                }
-                else
-                {
-                    resultado = false;
                 }
             }
             catch (Exception)
@@ -76,17 +95,18 @@ namespace Accesos.CLS
             bool resultado = false;
             DBOperacion operacion = new DBOperacion();
             StringBuilder sentencia = new StringBuilder();
-            sentencia.Append("DELETE FROM Empleados ");
-            sentencia.Append("WHERE idEmpleados = " + idEmpleados + ";");
+            sentencia.Append("DELETE FROM Empleados WHERE idEmpleados = @idEmpleados;");
+
             try
             {
-                if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
+                var parametros = new Dictionary<string, object>
+                {
+                    { "@idEmpleados", idEmpleados }
+                };
+
+                if (operacion.EjecutarSentencia(sentencia.ToString(), parametros) >= 0)
                 {
                     resultado = true;
-                }
-                else
-                {
-                    resultado = false;
                 }
             }
             catch (Exception)

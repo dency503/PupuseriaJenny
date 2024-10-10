@@ -57,72 +57,7 @@ namespace Accesos.CLS
         }
     }
 
-    public static class CargarDatosHelper
-    {
-        // Método para cargar roles
-        public static void CargarRoles(int paginaActual, int tamanoPagina, DataGrid rolesDataGrid)
-        {
-            var cargarRoles = new CargarDatos<Roles>(paginaActual, tamanoPagina);
-            cargarRoles.Cargar(
-                DataLayer.Consultas.ContarRoles,
-                DataLayer.Consultas.ROLES,
-                (row, items) =>
-                {
-                    items.Add(new Roles
-                    {
-                        IDRol = Convert.ToInt32(row["IDRol"]),
-                        Rol = row["Rol"].ToString()
-                    });
+   
 
-                },
-                rolesDataGrid
-            );
-        }
-        public static void CargarEmpleados(int paginaActual, int tamanoPagina, DataGrid rolesDataGrid)
-        {
-            var cargarRoles = new CargarDatos<Empleados>(paginaActual, tamanoPagina);
-            cargarRoles.Cargar(
-                DataLayer.Consultas.ContarRoles,
-                DataLayer.Consultas.Empleados,
-                (row, items) =>
-                {
-                    items.Add(new Empleados
-                    {
-                        idEmpleados = Convert.ToInt32(row["idEmpleados"]),
-                        nombresEmpleado = row["nombresEmpleado"].ToString()
-                    });
-
-                },
-                rolesDataGrid
-            );
-        }
-
-        // Método para cargar usuarios
-        public static void CargarUsuarios(int paginaActual, int tamanoPagina, DataGrid rolesDataGrid)
-        {
-            var cargarRoles = new CargarDatos<Usuarios>(paginaActual, tamanoPagina);
-            cargarRoles.Cargar(
-                DataLayer.Consultas.ContarUsuarios,
-                DataLayer.Consultas.USUARIOS,
-                (row, items) =>
-                {
-                    items.Add(new Usuarios
-                    {
-                        IDEmpleado = Convert.ToInt32(row["IDEmpleado"]),
-                        IDUsuario = Convert.ToInt32(row["IDUsuario"]),
-                        Usuario = row["Usuario"].ToString(),
-                        Contraseña = row["Contrasena"].ToString()
-
-                    });
-
-                },
-                rolesDataGrid
-            );
-        }
-    }
-
-    // Clase para Roles
-
-    // Clase para Usuarios
 
 }

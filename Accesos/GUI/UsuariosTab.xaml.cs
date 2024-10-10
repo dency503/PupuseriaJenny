@@ -77,28 +77,28 @@ namespace Accesos.GUI
 
                 /*  CargarDatosHelper.CargarUsuarios(_paginaActual, _tamanoPagina
                       , usersDataGrid);*/
-                var cargarRoles = new CargarDatos<Usuarios>(_paginaActual, _tamanoPagina);
-                cargarRoles.Cargar(
+                var cargarDatos = new CargarDatos<Usuarios>(_paginaActual, _tamanoPagina);
+                cargarDatos.Cargar(
                     DataLayer.Consultas.ContarUsuarios,
                     DataLayer.Consultas.USUARIOS,
-                    (row, items) =>
-                    {
-                        items.Add(new Usuarios
-                        {
-                            IDEmpleado = Convert.ToInt32(row["IDEmpleado"]),
-                            IDUsuario = Convert.ToInt32(row["IDUsuario"]),
-                            Usuario = row["Usuario"].ToString(),
-                            Contraseña = row["Contrasenia"].ToString(),
-                            IDRol = Convert.ToInt32(row["IDRol"])
+                   (row, items) =>
+                   {
+                       items.Add(new Usuarios
+                       {
+                           IDEmpleado = Convert.ToInt32(row["idEmpleado"]), // Asegúrate de que las claves coincidan con las de la base de datos
+                           IDUsuario = Convert.ToInt32(row["idUsuario"]),
+                           Usuario = row["Usuario"].ToString(),
+                           Contraseña = row["Contrasenia"].ToString(), // Considera no exponer la contraseña directamente
+                           IDRol = Convert.ToInt32(row["idRol"])
+                       });
+                   },
 
-                        });
-                       
-
-                    },
                     usersDataGrid
                 );
-                TotalRegistros = cargarRoles.TotalRegistros;
-                Items = cargarRoles.Items;
+                
+                TotalRegistros = cargarDatos.TotalRegistros;
+           
+                Items = cargarDatos.Items;
 
 
 

@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Windows;
 using MySql.Data.MySqlClient;
 
 namespace DataLayer
@@ -138,9 +139,9 @@ namespace DataLayer
             }
             return FilasAfectadas;
         }
-        public Int32 EjecutarSentencia(String pSentencia, Dictionary<string, object> parametros)
+        public int EjecutarSentencia(String pSentencia, Dictionary<string, object> parametros)
         {
-            Int32 FilasAfectadas = 0;
+            int FilasAfectadas = 0;
             MySqlCommand Comando = new MySqlCommand();
             try
             {
@@ -159,12 +160,22 @@ namespace DataLayer
                         }
                     }
 
-                    FilasAfectadas = Comando.ExecuteNonQuery();
+                    // Construir la consulta final
+                    string consultaFinal = pSentencia;
+                    foreach (var parametro in parametros)
+                    {
+                        consultaFinal = consultaFinal.Replace(parametro.Key, $"'{parametro.Value}'");
+                    }
+
+                    // Mostrar la consulta final en un MessageBox
+                    MessageBox.Show(consultaFinal, "Consulta SQL", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Console.WriteLine(consultaFinal);
+                   FilasAfectadas = Comando.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al ejecutar sentencia: " + ex.Message);
+                MessageBox.Show("Error al ejecutar sentencia: " + ex.ToString());
                 FilasAfectadas = -1;
             }
             finally
@@ -173,6 +184,8 @@ namespace DataLayer
             }
             return FilasAfectadas;
         }
+
+
 
     }
 }

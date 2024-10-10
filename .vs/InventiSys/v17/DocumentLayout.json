@@ -1,7 +1,108 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\PupuseriaJenny\\PupuseriaJenny\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\ventascontent.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\ventascontent.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\ventascontent.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\ventascontent.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\usuariocontent.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usuariocontent.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\usuariostab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usuariostab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\usuariostab.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usuariostab.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\productosview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\productosview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\usertab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usertab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\cls\\cargardatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\cls\\cargardatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\productostab.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\productostab.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\productostab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\productostab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\cls\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\cls\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BED8848-8BAA-484B-9E16-B49E5AB318AC}|DataLayer\\DataLayer.csproj|d:\\pupuseriajenny\\pupuseriajenny\\datalayer\\dboperacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BED8848-8BAA-484B-9E16-B49E5AB318AC}|DataLayer\\DataLayer.csproj|solutionrelative:datalayer\\dboperacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\cls\\empleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\cls\\empleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\editarusuariowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\editarusuariowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\usuariocontent.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usuariocontent.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\usertab.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\usertab.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\editarusuariowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\editarusuariowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\editarempleadowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\editarempleadowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\cls\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\cls\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\editarempleadowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\editarempleadowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\editarpermisowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\editarpermisowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\editarproductowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\editarproductowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BED8848-8BAA-484B-9E16-B49E5AB318AC}|DataLayer\\DataLayer.csproj|d:\\pupuseriajenny\\pupuseriajenny\\datalayer\\consultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BED8848-8BAA-484B-9E16-B49E5AB318AC}|DataLayer\\DataLayer.csproj|solutionrelative:datalayer\\consultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\empleadotab.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\empleadotab.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|d:\\pupuseriajenny\\pupuseriajenny\\accesos\\gui\\empleadotab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EC404995-9FB4-493C-BFFE-E492CFFC06EB}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\empleadotab.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +110,326 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VentasContent.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\VentasContent.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\VentasContent.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\VentasContent.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\VentasContent.xaml.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAqwBYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T01:10:49.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VentasContent.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\VentasContent.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\VentasContent.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\VentasContent.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\VentasContent.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-10T01:00:39.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductosTab.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\ProductosTab.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\ProductosTab.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\ProductosTab.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\ProductosTab.xaml.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAUwF0AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T00:53:04.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductosView.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\ProductosView.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\ProductosView.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\ProductosView.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\ProductosView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-10T00:52:59.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductosTab.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\ProductosTab.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\ProductosTab.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\ProductosTab.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\ProductosTab.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-10T00:52:57.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Usuarios.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\CLS\\Usuarios.cs",
+              "RelativeDocumentMoniker": "Accesos\\CLS\\Usuarios.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\CLS\\Usuarios.cs",
+              "RelativeToolTip": "Accesos\\CLS\\Usuarios.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAQwDoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T00:34:37.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DBOperacion.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\DataLayer\\DBOperacion.cs",
+              "RelativeDocumentMoniker": "DataLayer\\DBOperacion.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\DataLayer\\DBOperacion.cs",
+              "RelativeToolTip": "DataLayer\\DBOperacion.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAALEAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T00:27:05.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserTab.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UserTab.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UserTab.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UserTab.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\UserTab.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T00:18:53.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserTab.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UserTab.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UserTab.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UserTab.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\UserTab.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-10T00:18:47.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Productos.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\CLS\\Productos.cs",
+              "RelativeDocumentMoniker": "Accesos\\CLS\\Productos.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\CLS\\Productos.cs",
+              "RelativeToolTip": "Accesos\\CLS\\Productos.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T00:06:22.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CargarDatos.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\CLS\\CargarDatos.cs",
+              "RelativeDocumentMoniker": "Accesos\\CLS\\CargarDatos.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\CLS\\CargarDatos.cs",
+              "RelativeToolTip": "Accesos\\CLS\\CargarDatos.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T23:49:55.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EditarUsuarioWindow.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarUsuarioWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EditarUsuarioWindow.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarUsuarioWindow.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\EditarUsuarioWindow.xaml.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAkwEYAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T23:43:14.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EditarUsuarioWindow.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarUsuarioWindow.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EditarUsuarioWindow.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarUsuarioWindow.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\EditarUsuarioWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T23:43:12.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EditarEmpleadoWindow.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarEmpleadoWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EditarEmpleadoWindow.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarEmpleadoWindow.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\EditarEmpleadoWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T23:31:01.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Empleados.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\CLS\\Empleados.cs",
+              "RelativeDocumentMoniker": "Accesos\\CLS\\Empleados.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\CLS\\Empleados.cs",
+              "RelativeToolTip": "Accesos\\CLS\\Empleados.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAqwCcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T23:19:58.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EditarEmpleadoWindow.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarEmpleadoWindow.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EditarEmpleadoWindow.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarEmpleadoWindow.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\EditarEmpleadoWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T23:12:41.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Consultas.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\DataLayer\\Consultas.cs",
+              "RelativeDocumentMoniker": "DataLayer\\Consultas.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\DataLayer\\Consultas.cs",
+              "RelativeToolTip": "DataLayer\\Consultas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T23:11:45.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EmpleadoTab.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EmpleadoTab.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EmpleadoTab.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EmpleadoTab.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\EmpleadoTab.xaml.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAAAC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T23:03:16.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EmpleadoTab.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EmpleadoTab.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EmpleadoTab.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EmpleadoTab.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\EmpleadoTab.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T23:03:14.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuariosTab.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UsuariosTab.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UsuariosTab.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UsuariosTab.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\UsuariosTab.xaml.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAQwFgAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T23:02:52.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuariosTab.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UsuariosTab.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UsuariosTab.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UsuariosTab.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\UsuariosTab.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T23:02:49.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UsuarioContent.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UsuarioContent.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UsuarioContent.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UsuarioContent.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\UsuarioContent.xaml.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwCwAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T22:58:28.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioContent.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UsuarioContent.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\UsuarioContent.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\UsuarioContent.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\UsuarioContent.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T22:58:24.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EditarProductoWindow.xaml",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarProductoWindow.xaml",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EditarProductoWindow.xaml",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarProductoWindow.xaml",
+              "RelativeToolTip": "Accesos\\GUI\\EditarProductoWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T22:53:53.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EditarPermisoWindow.xaml.cs",
+              "DocumentMoniker": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarPermisoWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\EditarPermisoWindow.xaml.cs",
+              "ToolTip": "D:\\PupuseriaJenny\\PupuseriaJenny\\Accesos\\GUI\\EditarPermisoWindow.xaml.cs",
+              "RelativeToolTip": "Accesos\\GUI\\EditarPermisoWindow.xaml.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAADwvxAAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T22:52:22.656Z",
+              "EditorCaption": ""
             }
           ]
         }

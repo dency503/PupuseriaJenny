@@ -8,11 +8,11 @@
         mc:Ignorable="d"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
-        Title="Editar Empleado" Height="450" Width="500">
+        Title="Editar Empleado" Height="578" Width="518">
     <Grid>
         <StackPanel Margin="10">
             <StackPanel Orientation="Horizontal">
-                <Ico:PackIconMaterial Kind="Account" Width="20" Height="20" Margin="0,0,5,0" BorderBrush="#e8e8e8" />
+                <Ico:PackIconMaterial Kind="Account" Width="20" Height="20" Margin="0,0,5,0" />
                 <Label Content="ID Empleado:" FontWeight="Bold"/>
             </StackPanel>
             <TextBox Name="txtIDEmpleado" Margin="0,0,0,10" IsReadOnly="True" Background="#e8e8e8"/>
@@ -24,10 +24,30 @@
             <TextBox Name="txtNombre" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
 
             <StackPanel Orientation="Horizontal">
+                <Ico:PackIconMaterial Kind="AccountCircle" Width="20" Height="20" Margin="0,0,5,0" />
+                <Label Content="Apellidos:" FontWeight="Bold"/>
+            </StackPanel>
+            <TextBox Name="txtApellido" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
+
+            <StackPanel Orientation="Horizontal">
                 <Ico:PackIconMaterial Kind="BadgeAccount" Width="20" Height="20" Margin="0,0,5,0" />
                 <Label Content="Cargo:" FontWeight="Bold"/>
             </StackPanel>
-            <TextBox Name="txtCargo" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
+            <ComboBox Name="cmbCargo" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1">
+                <!-- Opciones de cargos se pueden cargar aquí -->
+            </ComboBox>
+
+            <StackPanel Orientation="Horizontal">
+                <Ico:PackIconMaterial Kind="Home" Width="20" Height="20" Margin="0,0,5,0" />
+                <Label Content="Dirección:" FontWeight="Bold"/>
+            </StackPanel>
+            <TextBox Name="txtDireccion" Margin="0,0,0,10" Padding="5" Background="#ffffff" BorderBrush="#d0c0ff" BorderThickness="1"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Ico:PackIconMaterial Kind="Calendar" Width="20" Height="20" Margin="0,0,5,0" />
+                <Label Content="Fecha de Nacimiento:" FontWeight="Bold"/>
+            </StackPanel>
+            <DatePicker Name="dpFechaNacimiento" Margin="0,0,0,10" />
 
             <StackPanel Orientation="Horizontal">
                 <Ico:PackIconMaterial Kind="Phone" Width="20" Height="20" Margin="0,0,5,0" />
@@ -55,7 +75,6 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-
         </StackPanel>
     </Grid>
 </Window>

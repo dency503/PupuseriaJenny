@@ -29,16 +29,23 @@ namespace Accesos.GUI
             if (empleado != null)
             {
                 EditarEmpleadoWindow editarEmpleadoWindow = new EditarEmpleadoWindow();
+
                 editarEmpleadoWindow.txtIDEmpleado.Text = empleado.idEmpleados.ToString();
-                editarEmpleadoWindow.txtNombre.Text = empleado.nombresEmpleado.ToString();
-                editarEmpleadoWindow.txtCargo.Text = empleado.idCargo.ToString();
-                editarEmpleadoWindow.txtTelefono.Text = empleado.telefono.ToString();
-                editarEmpleadoWindow.txtEmail.Text = empleado.email.ToString();
+                editarEmpleadoWindow.txtNombre.Text = empleado.nombresEmpleado;
+                editarEmpleadoWindow.txtApellido.Text = empleado.apellidosEmpleado; // Asegúrate de incluir el campo de apellidos
+                editarEmpleadoWindow.txtTelefono.Text = empleado.telefono;
+                editarEmpleadoWindow.txtEmail.Text = empleado.email;
+                editarEmpleadoWindow.txtDireccion.Text = empleado.direccion; // Si tienes el campo de dirección
+                editarEmpleadoWindow.dpFechaNacimiento.SelectedDate = empleado.fechaNacimiento; // Asumiendo que este campo está en la clase
+
+                // Asigna el cargo seleccionado en el ComboBox
+                editarEmpleadoWindow.cmbCargo.SelectedValue = empleado.idCargo;
+
                 editarEmpleadoWindow.ShowDialog();
 
-                Cargar();
-                // Aquí puedes abrir una ventana de edición o realizar otras acciones
+                Cargar(); // Volver a cargar la lista de empleados después de cerrar la ventana
             }
+
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
